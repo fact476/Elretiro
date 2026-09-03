@@ -2,37 +2,40 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>El Retiro, Antioquia — Ficha completa</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f7f0;color:#222}
-header{background:linear-gradient(135deg,#1a4a1a 0%,#2d6a2d 60%,#3b8a3b 100%);color:#fff;padding:28px 20px 22px;text-align:center}
-header .sup{font-size:12px;opacity:.7;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
-header h1{font-size:32px;font-weight:700;margin-bottom:4px}
-header .sub{font-size:14px;opacity:.85;margin-bottom:16px}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f2f5ee;color:#222}
+header{background:linear-gradient(135deg,#1a4a1a,#2d6a2d 60%,#3b8a3b);color:#fff;padding:28px 20px 22px;text-align:center}
+h1{font-size:32px;font-weight:700;margin-bottom:4px}
+.sub{font-size:14px;opacity:.85;margin-bottom:14px}
 .chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 12px;font-size:12px}
-.tab-bar{display:flex;background:#2d6a2d;overflow-x:auto}
-.tab-bar button{flex:1;min-width:85px;padding:11px 8px;background:none;border:none;color:rgba(255,255,255,.7);font-size:13px;font-weight:500;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+.tab-bar{display:flex;background:#2d6a2d;overflow-x:auto;position:sticky;top:0;z-index:99}
+.tab-bar button{flex:1;min-width:85px;padding:11px 6px;background:none;border:none;color:rgba(255,255,255,.7);font-size:13px;font-weight:500;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
 .tab-bar button:hover{color:#fff;background:rgba(255,255,255,.1)}
 .tab-bar button.active{color:#fff;border-bottom-color:#fcde5a}
-.panel{display:none;padding:20px;max-width:960px;margin:0 auto}
+.panel{display:none;padding:20px;max-width:980px;margin:0 auto}
 .panel.active{display:block}
 .card{background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
 .card h3{font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;border-bottom:2px solid #eaf3de;padding-bottom:5px}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-@media(max-width:600px){.g2,.g3{grid-template-columns:1fr}}
+@media(max-width:620px){.g2,.g3,.row2,.row3{grid-template-columns:1fr!important}}
 .stat{background:#eaf3de;border-radius:10px;padding:12px;text-align:center}
 .stat-val{font-size:22px;font-weight:700;color:#2d6a2d}
 .stat-lbl{font-size:11px;color:#555;margin-top:2px}
-.ilus{border-radius:10px;overflow:hidden;margin-bottom:14px;border:0.5px solid #d0d0d0}
+/* IMÁGENES */
+.ilus{border-radius:10px;overflow:hidden;border:.5px solid #d8d8d8;background:#e8f0e0;margin-bottom:0}
+.ilus img{width:100%;object-fit:cover;display:block}
+.ph{height:220px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#666;background:#e8ede4}
 .ilus-cap{padding:7px 12px;background:#2d6a2d;color:#fff;font-size:12px;font-weight:600}
 .ilus-sub{padding:5px 12px 9px;background:#eaf3de;color:#27500a;font-size:11px;line-height:1.5}
-.ilus-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
-.ilus-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
-@media(max-width:600px){.ilus-row,.ilus-row3{grid-template-columns:1fr}}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+.ilus-half{}
+/* TIMELINE */
 .tl{list-style:none;padding:0}
 .tl li{display:flex;margin:0}
 .tl-yr{width:56px;text-align:right;padding-right:10px;font-size:11px;font-weight:700;color:#2d6a2d;padding-top:2px;flex-shrink:0}
@@ -43,17 +46,13 @@ header .sub{font-size:14px;opacity:.85;margin-bottom:16px}
 .tl-seg{flex:1;width:2px;background:#c0dd97;margin:2px 0}
 .tl-body{flex:1;padding:0 0 16px 12px;font-size:13px;line-height:1.6}
 .tl-tag{display:inline-block;background:#c0392b;color:#fff;font-size:10px;font-weight:700;border-radius:4px;padding:1px 6px;margin-bottom:4px}
+/* HIGHLIGHTS */
 .hl{background:#eaf3de;border-left:4px solid #2d6a2d;border-radius:0 8px 8px 0;padding:10px 14px;font-size:13px;color:#1a4a1a;margin:10px 0;line-height:1.6}
 .hl.red{background:#fdecea;border-color:#c0392b;color:#7b241c}
 .hl.amber{background:#faeeda;border-color:#ba7517;color:#633806}
 .hl.blue{background:#e6f1fb;border-color:#185fa5;color:#0c447c}
+/* MISC */
 .badge{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin:2px;background:#eaf3de;color:#27500a}
-.badge.red{background:#fdecea;color:#7b241c}
-.badge.amber{background:#faeeda;color:#633806}
-.econ-item{margin:7px 0}
-.econ-lbl{font-size:12px;color:#444;margin-bottom:3px}
-.econ-bg{background:#eaf3de;border-radius:6px;height:9px;overflow:hidden}
-.econ-bar{height:100%;border-radius:6px;background:#2d6a2d}
 .fila{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0f0f0;font-size:13px}
 .fila:last-child{border-bottom:none}
 .fila-k{min-width:155px;color:#666;font-weight:500;flex-shrink:0}
@@ -64,13 +63,22 @@ header .sub{font-size:14px;opacity:.85;margin-bottom:16px}
 .sym-item:last-child{border-bottom:none}
 .sym-n{font-weight:600;color:#2d6a2d;font-size:13px;margin-bottom:3px}
 .sym-d{font-size:12px;color:#555;line-height:1.5}
-footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:14px;font-size:11px;margin-top:16px;line-height:1.6}
+.econ-item{margin:7px 0}
+.econ-lbl{font-size:12px;color:#444;margin-bottom:3px}
+.econ-bg{background:#eaf3de;border-radius:6px;height:9px;overflow:hidden}
+.econ-bar{height:100%;border-radius:6px;background:#2d6a2d}
+/* bandera CSS */
+.flag-box{height:110px;position:relative;border-radius:6px;overflow:hidden;border:.5px solid #ccc;margin-bottom:12px}
+.flag-white{position:absolute;inset:0;background:#fff}
+.flag-green{position:absolute;right:0;top:0;width:0;height:0;border-style:solid;border-width:0 0 110px 220px;border-color:transparent transparent transparent #2d6a2d}
+.flag-stars{position:absolute;right:14px;bottom:22px;color:#fff;font-size:20px;letter-spacing:4px}
+footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:14px;font-size:11px;margin-top:16px;line-height:1.7}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="sup">Oriente Antioqueño · Colombia</div>
+  <div style="font-size:12px;opacity:.7;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px">Oriente Antioqueño · Colombia</div>
   <h1>El Retiro, Antioquia</h1>
   <div class="sub">Ficha exhaustiva — Historia · Geografía · Economía · Cultura · Turismo</div>
   <div class="chips">
@@ -92,101 +100,57 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
   <button onclick="show('datos',this)">Datos</button>
 </div>
 
-<!-- GEO -->
+
+<!-- ═══ GEOGRAFÍA ═══ -->
 <div id="geo" class="panel active">
   <div class="g3" style="margin-bottom:14px">
     <div class="stat"><div class="stat-val">243 km²</div><div class="stat-lbl">Extensión total</div></div>
     <div class="stat"><div class="stat-val">2.175 m</div><div class="stat-lbl">Altitud s.n.m.</div></div>
     <div class="stat"><div class="stat-val">16 °C</div><div class="stat-lbl">Temperatura promedio</div></div>
   </div>
-  <div class="ilus-row">
+  <div class="row2">
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Cielo -->
-  <rect width="800" height="280" fill="#87CEEB"/>
-  <rect y="0" width="800" height="140" fill="#B0D9F5"/>
-  <!-- Nubes -->
-  <ellipse cx="120" cy="40" rx="60" ry="25" fill="white" opacity=".85"/>
-  <ellipse cx="160" cy="35" rx="50" ry="20" fill="white" opacity=".9"/>
-  <ellipse cx="600" cy="55" rx="70" ry="28" fill="white" opacity=".8"/>
-  <ellipse cx="650" cy="48" rx="55" ry="22" fill="white" opacity=".85"/>
-  <!-- Montañas fondo -->
-  <polygon points="0,160 80,70 160,120 240,60 320,100 400,50 480,90 560,55 640,95 720,65 800,100 800,200 0,200" fill="#4a7c59"/>
-  <polygon points="0,170 100,90 200,130 300,80 400,110 500,75 600,105 700,80 800,110 800,200 0,200" fill="#3b6d40"/>
-  <!-- Montañas primer plano -->
-  <polygon points="0,200 150,120 300,170 450,110 600,160 750,115 800,140 800,280 0,280" fill="#2d5a2d"/>
-  <!-- Valles verdes -->
-  <rect x="0" y="220" width="800" height="60" fill="#4a8a3a"/>
-  <!-- Casas pueblo en valle -->
-  <rect x="320" y="195" width="22" height="28" rx="2" fill="#f5e6c8"/>
-  <polygon points="319,195 342,195 330,183" fill="#c0392b"/>
-  <rect x="348" y="198" width="20" height="25" rx="2" fill="#faebd7"/>
-  <polygon points="347,198 368,198 358,187" fill="#8b4513"/>
-  <rect x="374" y="193" width="24" height="30" rx="2" fill="#fffaf0"/>
-  <polygon points="373,193 398,193 386,180" fill="#c0392b"/>
-  <!-- Torre iglesia -->
-  <rect x="355" y="170" width="10" height="30" rx="1" fill="#f5f5dc"/>
-  <rect x="353" y="166" width="14" height="6" rx="1" fill="#daa520"/>
-  <!-- Árboles primer plano -->
-  <ellipse cx="100" cy="225" rx="35" ry="28" fill="#1a5c1a"/>
-  <rect x="97" y="240" width="6" height="20" fill="#6b4226"/>
-  <ellipse cx="680" cy="220" rx="40" ry="32" fill="#1a5c1a"/>
-  <rect x="677" y="238" width="6" height="22" fill="#6b4226"/>
-  <ellipse cx="220" cy="235" rx="28" ry="22" fill="#228B22"/>
-  <ellipse cx="570" cy="230" rx="30" ry="24" fill="#228B22"/>
-  <!-- Carretera -->
-  <path d="M0 265 Q400 258 800 268" stroke="#ccc" stroke-width="6" fill="none"/>
-  <!-- Bruma de altiplano -->
-  <rect x="0" y="130" width="800" height="30" fill="white" opacity=".15"/>
-</svg>
-      <div class="ilus-cap">Paisaje zona rural de El Retiro</div>
-      <div class="ilus-sub">Vista del altiplano del Oriente antioqueño a 2.175 m s.n.m. Cordillera Central de los Andes</div>
-    </div>
+  <div class="ph" id="ph_panoramica">📷 Zona rural El Retiro 2018</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg/960px-2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg" alt="Zona rural El Retiro 2018" height="220"
+       onload="document.getElementById('ph_panoramica').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_panoramica').innerHTML='⚠️ Zona rural El Retiro 2018'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Paisaje zona rural — El Retiro, Oriente Antioqueño</div>
+  <div class='ilus-sub'>Vista del altiplano a 2.175 m s.n.m. Cordillera Central de los Andes</div>
+</div>
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Cielo al amanecer -->
-  <rect width="800" height="280" fill="#B8D4E8"/>
-  <rect y="0" width="800" height="100" fill="#C8E6F5"/>
-  <!-- Nubes suaves -->
-  <ellipse cx="200" cy="50" rx="90" ry="30" fill="white" opacity=".75"/>
-  <ellipse cx="250" cy="42" rx="70" ry="24" fill="white" opacity=".8"/>
-  <ellipse cx="650" cy="60" rx="80" ry="28" fill="white" opacity=".7"/>
-  <!-- Montañas verdes al fondo -->
-  <polygon points="0,160 100,80 200,120 350,70 500,110 650,65 800,100 800,200 0,200" fill="#3a7a3a"/>
-  <polygon points="0,180 120,110 250,145 400,100 550,135 700,100 800,125 800,210 0,210" fill="#2d6a2d"/>
-  <!-- Represa (muro de concreto) -->
-  <rect x="340" y="155" width="120" height="55" rx="3" fill="#8B9096"/>
-  <rect x="340" y="155" width="120" height="8" fill="#9EA5AE"/>
-  <rect x="345" y="163" width="8" height="47" fill="#A5ACB5"/>
-  <rect x="362" y="163" width="8" height="47" fill="#A5ACB5"/>
-  <rect x="379" y="163" width="8" height="47" fill="#A5ACB5"/>
-  <rect x="396" y="163" width="8" height="47" fill="#A5ACB5"/>
-  <rect x="413" y="163" width="8" height="47" fill="#A5ACB5"/>
-  <rect x="430" y="163" width="8" height="47" fill="#A5ACB5"/>
-  <rect x="447" y="163" width="8" height="47" fill="#A5ACB5"/>
-  <!-- Embalse agua tranquila -->
-  <ellipse cx="400" cy="180" rx="340" ry="55" fill="#2980B9" opacity=".85"/>
-  <ellipse cx="400" cy="180" rx="310" ry="48" fill="#3498DB" opacity=".7"/>
-  <!-- Reflejos agua -->
-  <path d="M100 170 Q200 165 300 172 Q400 178 500 171 Q600 164 700 170" stroke="white" stroke-width="1.5" fill="none" opacity=".4"/>
-  <path d="M120 182 Q220 177 320 184 Q420 190 520 183 Q620 176 720 182" stroke="white" stroke-width="1" fill="none" opacity=".3"/>
-  <path d="M150 193 Q250 188 350 195 Q450 201 550 194 Q650 187 750 193" stroke="white" stroke-width="1" fill="none" opacity=".25"/>
-  <!-- Vegetación orillas -->
-  <ellipse cx="60" cy="215" rx="40" ry="28" fill="#1a5c1a"/>
-  <ellipse cx="740" cy="215" rx="40" ry="28" fill="#1a5c1a"/>
-  <ellipse cx="150" cy="222" rx="30" ry="20" fill="#228B22"/>
-  <ellipse cx="650" cy="222" rx="30" ry="20" fill="#228B22"/>
-  <!-- Piso verde -->
-  <rect x="0" y="235" width="800" height="45" fill="#3a7a2a"/>
-  <!-- Texto -->
-  <rect x="250" y="248" width="300" height="22" rx="4" fill="rgba(0,0,0,.4)"/>
-  <text x="400" y="263" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Represa de La Fe — Reserva hídrica del Oriente Antioqueño</text>
-</svg>
-      <div class="ilus-cap">Represa de La Fe</div>
-      <div class="ilus-sub">Reserva hídrica del Oriente antioqueño. Abastece a Medellín. Ecoturismo y recreación</div>
-    </div>
+  <div class="ph" id="ph_represa">📷 Embalse La Fe</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Embalse_La_Fe_El_Retiro.jpg/960px-Embalse_La_Fe_El_Retiro.jpg" alt="Embalse La Fe" height="220"
+       onload="document.getElementById('ph_represa').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_represa').innerHTML='⚠️ Embalse La Fe'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Represa de La Fe</div>
+  <div class='ilus-sub'>Reserva hídrica regional. Abastece a Medellín. Ecoturismo y recreación</div>
+</div>
+  </div>
+  <div class="row2" style="margin-bottom:14px">
+    <div class="ilus">
+  <div class="ph" id="ph_mapa">📷 Mapa El Retiro en Antioquia</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Colombia_-_Antioquia_-_El_Retiro.svg/500px-Colombia_-_Antioquia_-_El_Retiro.svg.png" alt="Mapa El Retiro en Antioquia" height="220"
+       onload="document.getElementById('ph_mapa').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_mapa').innerHTML='⚠️ Mapa El Retiro en Antioquia'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Ubicación en Antioquia</div>
+  <div class='ilus-sub'>El Retiro en la subregión Oriente del departamento</div>
+</div>
+    <div class="ilus">
+  <div class="ph" id="ph_oriente">📷 Oriente Antioqueño</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Antioquia_Oriente.JPG/960px-Antioquia_Oriente.JPG" alt="Oriente Antioqueño" height="220"
+       onload="document.getElementById('ph_oriente').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_oriente').innerHTML='⚠️ Oriente Antioqueño'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Oriente Antioqueño</div>
+  <div class='ilus-sub'>Subregión donde se ubica El Retiro, rodeado de montañas y valles</div>
+</div>
   </div>
   <div class="card">
     <h3>Ubicación y límites</h3>
@@ -200,7 +164,7 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
       </div>
       <div>
         <div class="fila"><span class="fila-k">Río principal:</span><span>Pantanillo</span></div>
-        <div class="fila"><span class="fila-k">Represa:</span><span>La Fe (agua para Medellín)</span></div>
+        <div class="fila"><span class="fila-k">Represa:</span><span>La Fe (abastece a Medellín)</span></div>
         <div class="fila"><span class="fila-k">Reserva natural:</span><span>San Sebastián La Castellana (200 ha)</span></div>
         <div class="fila"><span class="fila-k">Zona urbana:</span><span>1 km²</span></div>
       </div>
@@ -208,7 +172,7 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
   </div>
   <div class="card">
     <h3>Las 20 veredas</h3>
-    <div style="line-height:2">
+    <div style="line-height:2.2">
       <span class="badge">Carrizales</span><span class="badge">Don Diego</span><span class="badge">El Barcino</span>
       <span class="badge">El Carmen</span><span class="badge">El Chuscal</span><span class="badge">El Portento</span>
       <span class="badge">La Amapola</span><span class="badge">La Honda</span><span class="badge">La Hondita</span>
@@ -217,170 +181,98 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
       <span class="badge">Pantalio</span><span class="badge">Pantanillo</span><span class="badge">Puente Peláez</span>
       <span class="badge">Santa Elena</span><span class="badge">Tabacal</span>
     </div>
-    <div class="hl" style="margin-top:12px">El nombre <strong>El Guarzo</strong> proviene de las minas de cuarzo de la zona. La palabra se transformó en el habla campesina hasta generar el gentilicio <strong>guarceño</strong>.</div>
+    <div class="hl" style="margin-top:12px">El nombre <strong>El Guarzo</strong> proviene de las minas de cuarzo de la zona. La palabra evolucionó en el habla campesina hasta generar el gentilicio <strong>guarceño</strong>.</div>
   </div>
 </div>
 
-<!-- HISTORIA -->
+<!-- ═══ HISTORIA ═══ -->
 <div id="historia" class="panel">
-  <div class="ilus-row">
+  <div class="row2">
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Fondo patio colonial -->
-  <rect width="800" height="280" fill="#F5E6C8"/>
-  <!-- Cielo -->
-  <rect width="800" height="100" fill="#C8E6F5"/>
-  <!-- Arquitectura colonial fondo -->
-  <rect x="0" y="80" width="800" height="200" fill="#EDE0C4"/>
-  <rect x="0" y="78" width="800" height="8" fill="#C4A882"/>
-  <!-- Columnas -->
-  <rect x="120" y="80" width="20" height="150" fill="#DEB887"/>
-  <rect x="280" y="80" width="20" height="150" fill="#DEB887"/>
-  <rect x="500" y="80" width="20" height="150" fill="#DEB887"/>
-  <rect x="660" y="80" width="20" height="150" fill="#DEB887"/>
-  <!-- Arcos entre columnas -->
-  <path d="M120 120 Q200 80 280 120" stroke="#C4A882" stroke-width="12" fill="none"/>
-  <path d="M280 120 Q390 80 500 120" stroke="#C4A882" stroke-width="12" fill="none"/>
-  <path d="M500 120 Q580 80 660 120" stroke="#C4A882" stroke-width="12" fill="none"/>
-  <!-- Pedestal de la estatua -->
-  <rect x="330" y="185" width="140" height="45" rx="3" fill="#8B7355"/>
-  <rect x="320" y="182" width="160" height="10" rx="2" fill="#9C8465"/>
-  <rect x="326" y="225" width="148" height="8" rx="1" fill="#7A6245"/>
-  <!-- Texto en pedestal -->
-  <text x="400" y="210" text-anchor="middle" font-size="10" fill="#FFFAF0" font-family="sans-serif" font-weight="bold">JAVIERA LONDOÑO</text>
-  <text x="400" y="222" text-anchor="middle" font-size="8" fill="#EDE0C4" font-family="sans-serif">Cuna de la Libertad · 1766</text>
-  <!-- Estatua (silueta mujer rompiendo cadenas) -->
-  <!-- Cuerpo -->
-  <ellipse cx="400" cy="115" rx="12" ry="15" fill="#6B4226"/>
-  <!-- Cabeza -->
-  <circle cx="400" cy="95" r="12" fill="#D2691E"/>
-  <!-- Brazo levantado rompiendo cadena -->
-  <path d="M400 115 L430 90 L445 80" stroke="#6B4226" stroke-width="8" stroke-linecap="round" fill="none"/>
-  <!-- Mano con cadena rota -->
-  <circle cx="448" cy="78" r="6" fill="#D2691E"/>
-  <path d="M448 72 L452 62 M448 72 L455 68" stroke="#DAA520" stroke-width="3" stroke-linecap="round" fill="none"/>
-  <!-- Brazo otro lado -->
-  <path d="M400 115 L375 105" stroke="#6B4226" stroke-width="7" stroke-linecap="round" fill="none"/>
-  <!-- Falda vestido -->
-  <polygon points="388,130 412,130 420,182 380,182" fill="#7B3F00"/>
-  <!-- Cadena rota cayendo -->
-  <path d="M450 85 Q460 100 455 115 Q450 125 448 130" stroke="#DAA520" stroke-width="2.5" fill="none" stroke-dasharray="4,3"/>
-  <!-- Planta en base -->
-  <ellipse cx="310" cy="235" rx="25" ry="12" fill="#1a5c1a"/>
-  <ellipse cx="490" cy="235" rx="25" ry="12" fill="#1a5c1a"/>
-  <!-- Piso empedrado -->
-  <rect x="0" y="235" width="800" height="45" fill="#C4A882"/>
-  <line x1="0" y1="248" x2="800" y2="248" stroke="#B8966E" stroke-width=".8"/>
-  <line x1="0" y1="262" x2="800" y2="262" stroke="#B8966E" stroke-width=".8"/>
-  <!-- Texto -->
-  <rect x="210" y="248" width="380" height="22" rx="4" fill="rgba(0,0,0,.4)"/>
-  <text x="400" y="263" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Centro Cultural Javiera Londoño — Primera en liberar esclavos en América (1766)</text>
-</svg>
-      <div class="ilus-cap">Estatua de Javiera Londoño</div>
-      <div class="ilus-sub">Escultura en bronce del italiano Giuseppe Agelao. Centro Cultural Javiera Londoño</div>
-    </div>
+  <div class="ph" id="ph_javiera">📷 Estatua de Javiera Londoño</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Estatua_Javiera_Londo%C3%B1o_El_Retiro.jpg/600px-Estatua_Javiera_Londo%C3%B1o_El_Retiro.jpg" alt="Estatua de Javiera Londoño" height="220"
+       onload="document.getElementById('ph_javiera').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_javiera').innerHTML='⚠️ Estatua de Javiera Londoño'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Centro Cultural Javiera Londoño</div>
+  <div class='ilus-sub'>Estatua en bronce del escultor italiano Giuseppe Agelao — primera en liberar esclavos en América (1766)</div>
+</div>
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Cielo azul claro -->
-  <rect width="800" height="280" fill="#C8E6F5"/>
-  <!-- Nubes -->
-  <ellipse cx="650" cy="45" rx="80" ry="30" fill="white" opacity=".9"/>
-  <ellipse cx="700" cy="38" rx="65" ry="25" fill="white" opacity=".95"/>
-  <ellipse cx="100" cy="60" rx="60" ry="22" fill="white" opacity=".8"/>
-  <!-- Piso plaza adoquín -->
-  <rect x="0" y="210" width="800" height="70" fill="#D2B48C"/>
-  <rect x="0" y="208" width="800" height="6" fill="#C4A882"/>
-  <!-- Patrón adoquín -->
-  <line x1="0" y1="218" x2="800" y2="218" stroke="#C4A882" stroke-width=".8"/>
-  <line x1="0" y1="228" x2="800" y2="228" stroke="#C4A882" stroke-width=".8"/>
-  <line x1="0" y1="238" x2="800" y2="238" stroke="#C4A882" stroke-width=".8"/>
-  <!-- Cuerpo iglesia -->
-  <rect x="270" y="100" width="260" height="115" rx="4" fill="#F5F5DC"/>
-  <!-- Fachada principal -->
-  <rect x="310" y="85" width="180" height="130" rx="4" fill="#FFFAF0"/>
-  <!-- Torres -->
-  <rect x="310" y="40" width="45" height="120" rx="3" fill="#F5F5DC"/>
-  <rect x="445" y="40" width="45" height="120" rx="3" fill="#F5F5DC"/>
-  <!-- Cúpulas torres -->
-  <ellipse cx="332" cy="40" rx="24" ry="12" fill="#DAA520"/>
-  <rect x="329" y="28" width="6" height="15" fill="#DAA520"/>
-  <ellipse cx="328" cy="27" rx="5" ry="5" fill="#DAA520"/>
-  <ellipse cx="468" cy="40" rx="24" ry="12" fill="#DAA520"/>
-  <rect x="465" y="28" width="6" height="15" fill="#DAA520"/>
-  <ellipse cx="464" cy="27" rx="5" ry="5" fill="#DAA520"/>
-  <!-- Ventanas torres -->
-  <rect x="319" y="65" width="14" height="22" rx="7" fill="#87CEEB" stroke="#C4A882" stroke-width="1.5"/>
-  <rect x="339" y="65" width="14" height="22" rx="7" fill="#87CEEB" stroke="#C4A882" stroke-width="1.5"/>
-  <rect x="455" y="65" width="14" height="22" rx="7" fill="#87CEEB" stroke="#C4A882" stroke-width="1.5"/>
-  <rect x="475" y="65" width="14" height="22" rx="7" fill="#87CEEB" stroke="#C4A882" stroke-width="1.5"/>
-  <!-- Rosetón central -->
-  <circle cx="400" cy="118" r="22" fill="#87CEEB" stroke="#DAA520" stroke-width="2.5"/>
-  <circle cx="400" cy="118" r="14" fill="#B0D4E8" stroke="#DAA520" stroke-width="1.5"/>
-  <!-- Puerta principal arco -->
-  <rect x="375" y="165" width="50" height="50" rx="25 25 0 0" fill="#8B4513"/>
-  <!-- Escalones -->
-  <rect x="360" y="210" width="80" height="8" rx="2" fill="#D2B48C"/>
-  <rect x="355" y="217" width="90" height="7" rx="1" fill="#C4A882"/>
-  <!-- Palmeras laterales -->
-  <rect x="240" y="180" width="6" height="32" fill="#8B6914"/>
-  <ellipse cx="243" cy="178" rx="22" ry="14" fill="#228B22" transform="rotate(-15,243,178)"/>
-  <ellipse cx="243" cy="180" rx="20" ry="10" fill="#2d8b2d" transform="rotate(20,243,180)"/>
-  <rect x="554" y="180" width="6" height="32" fill="#8B6914"/>
-  <ellipse cx="557" cy="178" rx="22" ry="14" fill="#228B22" transform="rotate(15,557,178)"/>
-  <ellipse cx="557" cy="180" rx="20" ry="10" fill="#2d8b2d" transform="rotate(-20,557,180)"/>
-  <!-- Texto indicativo -->
-  <rect x="260" y="240" width="280" height="22" rx="4" fill="rgba(0,0,0,.35)"/>
-  <text x="400" y="255" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Iglesia Nuestra Señora del Rosario — Fundada 1814</text>
-</svg>
-      <div class="ilus-cap">Iglesia Nuestra Señora del Rosario</div>
-      <div class="ilus-sub">Estilo barroco tardío y griego clásico. Fundada en 1814, inaugurada en 1850</div>
-    </div>
+  <div class="ph" id="ph_iglesia">📷 Iglesia Nuestra Señora del Rosario</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Iglesia_El_Retiro_Antioquia_Colombia.jpg/960px-Iglesia_El_Retiro_Antioquia_Colombia.jpg" alt="Iglesia Nuestra Señora del Rosario" height="220"
+       onload="document.getElementById('ph_iglesia').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_iglesia').innerHTML='⚠️ Iglesia Nuestra Señora del Rosario'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Iglesia Nuestra Señora del Rosario — fundada 1814</div>
+  <div class='ilus-sub'>Estilo barroco tardío y neoclásico. Construcción definitiva terminada hacia 1874</div>
+</div>
   </div>
   <div class="hl red"><strong>Hito mundial:</strong> El 11 de octubre de 1766, Javiera Londoño firmó el testamento liberando ~140 esclavos. Fue la <strong>primera liberación masiva de esclavos en América y el mundo</strong> — 38 años antes que Haití (1804), 55 años antes del decreto de Bolívar, y 85 años antes de la abolición en Colombia (1851).</div>
   <div class="card">
     <h3>Línea de tiempo histórica</h3>
     <ul class="tl">
-      <li><div class="tl-yr">s. XVII</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Ocupación indígena y conquista española.</strong> El territorio lo habitaban los indígenas tahamíes y quiramas. Conquistadores vascos ocupan el altiplano a principios del siglo XVII.</div></li>
-      <li><div class="tl-yr">1734</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Llegan Ignacio Castañeda y Javiera Londoño.</strong> Se establecen como terratenientes y mineros en El Guarzo, explotando minas de cuarzo con sus esclavos.</div></li>
-      <li><div class="tl-yr">1759</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Primer testamento de libertad.</strong> Javiera y su esposo liberan a ~40 esclavos en su primer documento.</div></li>
-      <li><div class="tl-yr">1766</div><div class="tl-mid"><div class="tl-dot red big"></div><div class="tl-seg"></div></div><div class="tl-body"><span class="tl-tag">HITO MUNDIAL · 11 de octubre</span><br><strong>Primera liberación masiva de esclavos en América.</strong> Javiera Londoño firma el testamento liberando ~140 esclavos y cediéndoles las minas. Ocurre 38 años antes que Haití, 85 años antes de la abolición oficial en Colombia.</div></li>
+      <li><div class="tl-yr">s. XVII</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Ocupación indígena y conquista.</strong> Territorio habitado por los tahamíes y quiramas. Conquistadores vascos ocupan el altiplano.</div></li>
+      <li><div class="tl-yr">1734</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Llegan Ignacio Castañeda y Javiera Londoño.</strong> Se establecen como terratenientes y mineros en El Guarzo.</div></li>
+      <li><div class="tl-yr">1759</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Primer testamento de libertad.</strong> Liberan a ~40 esclavos en el primer documento.</div></li>
+      <li><div class="tl-yr">1766</div><div class="tl-mid"><div class="tl-dot red big"></div><div class="tl-seg"></div></div><div class="tl-body"><span class="tl-tag">HITO MUNDIAL · 11 oct</span><br><strong>Primera liberación masiva de esclavos en América.</strong> Javiera libera ~140 esclavos y les cede las minas. 38 años antes que Haití, 85 antes de la abolición en Colombia.</div></li>
       <li><div class="tl-yr">1790</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Reconocido como vereda El Guarzo</strong> del municipio de Rionegro. Fundación oficial del poblado.</div></li>
-      <li><div class="tl-yr">15 oct<br>1814</div><div class="tl-mid"><div class="tl-dot big" style="background:#2d6a2d;box-shadow:0 0 0 2px #2d6a2d"></div><div class="tl-seg"></div></div><div class="tl-body"><strong style="color:#27500A">Erección oficial como municipio.</strong> El presbítero Lucio de Villa firma el decreto. Se funda la parroquia Nuestra Señora del Rosario. Familias fundadoras: Mejía, Arcila, Montoya, Uribe, Vallejo, Henao.</div></li>
-      <li><div class="tl-yr">1920</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Nace la Banda de Música de El Retiro.</strong> Iniciativa parroquial. Hoy supera los 100 años y es referente nacional.</div></li>
-      <li><div class="tl-yr">1960s</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Auge industrial y cultural.</strong> La industria del mueble se consolida. Se institucionaliza la Retreta del primer sábado de cada mes.</div></li>
-      <li><div class="tl-yr">Hoy</div><div class="tl-mid"><div class="tl-dot big" style="background:#2d6a2d;box-shadow:0 0 0 2px #2d6a2d"></div></div><div class="tl-body"><strong style="color:#27500A">Destino turístico y polo de desarrollo.</strong> +115 talleres de muebles, aguacate Hass a Europa y Japón, gastronomía de autor, ecoturismo.</div></li>
+      <li><div class="tl-yr">15 oct<br>1814</div><div class="tl-mid"><div class="tl-dot big" style="background:#2d6a2d;box-shadow:0 0 0 2px #2d6a2d"></div><div class="tl-seg"></div></div><div class="tl-body"><strong style="color:#27500A">Erección oficial como municipio.</strong> El presbítero Lucio de Villa firma el decreto. Familias fundadoras: Mejía, Arcila, Montoya, Uribe, Vallejo, Henao.</div></li>
+      <li><div class="tl-yr">1920</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Nace la Banda de Música de El Retiro.</strong> Iniciativa parroquial. Hoy supera los 100 años.</div></li>
+      <li><div class="tl-yr">Hoy</div><div class="tl-mid"><div class="tl-dot big" style="background:#2d6a2d;box-shadow:0 0 0 2px #2d6a2d"></div></div><div class="tl-body"><strong style="color:#27500A">Destino turístico y polo de desarrollo.</strong> +115 talleres de muebles, aguacate Hass a Europa y Japón, gastronomía de autor y ecoturismo.</div></li>
     </ul>
   </div>
 </div>
 
-<!-- SÍMBOLOS -->
+<!-- ═══ SÍMBOLOS ═══ -->
 <div id="simbolos" class="panel">
-  <div class="g2" style="margin-bottom:14px">
+  <div class="row2" style="margin-bottom:14px">
+    <div class="ilus">
+  <div class="ph" id="ph_escudo">📷 Escudo municipal de El Retiro</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Coat_of_arms_of_Retiro.svg/400px-Coat_of_arms_of_Retiro.svg.png" alt="Escudo municipal de El Retiro" height="280"
+       onload="document.getElementById('ph_escudo').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_escudo').innerHTML='⚠️ Escudo municipal de El Retiro'"
+       style="display:none;width:100%;height:280px;object-fit:cover">
+  <div class="ilus-cap">Escudo oficial de El Retiro</div>
+  <div class='ilus-sub'>Cada elemento tiene un significado histórico profundo relacionado con la identidad guarceña</div>
+</div>
+    <div class="ilus">
+  <div class="ph" id="ph_bandera">📷 Bandera de El Retiro</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Flag_of_El_Retiro_%28Antioquia%29.svg/600px-Flag_of_El_Retiro_%28Antioquia%29.svg.png" alt="Bandera de El Retiro" height="280"
+       onload="document.getElementById('ph_bandera').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_bandera').innerHTML='⚠️ Bandera de El Retiro'"
+       style="display:none;width:100%;height:280px;object-fit:cover">
+  <div class="ilus-cap">Bandera oficial del municipio</div>
+  <div class='ilus-sub'>Fondo blanco (paz) · Triángulo verde (esperanza) · Estrellas blancas (veredas)</div>
+</div>
+  </div>
+  <div class="g2">
     <div class="card">
-      <h3>Escudo municipal — significado</h3>
+      <h3>Significado del escudo</h3>
       <div class="sym-item"><div class="sym-n">Figura indígena tahamí</div><div class="sym-d">Homenaje a los dueños originales del territorio antes de la conquista española.</div></div>
       <div class="sym-item"><div class="sym-n">Cadenas rotas</div><div class="sym-d">La pieza más representativa. Evoca la liberación de esclavos por Javiera Londoño — primera en el Nuevo Reino de Granada. Aparecen reventadas en la base.</div></div>
-      <div class="sym-item"><div class="sym-n">Roble</div><div class="sym-d">Simboliza la fortaleza del municipio, su raza emprendedora y la belleza de sus paisajes.</div></div>
+      <div class="sym-item"><div class="sym-n">Roble</div><div class="sym-d">Simboliza la fortaleza del municipio y la belleza de sus paisajes.</div></div>
       <div class="sym-item"><div class="sym-n">Cordón franciscano</div><div class="sym-d">Recuerdo de Fray Cansío Botero, primer párroco y capellán del Libertador Simón Bolívar.</div></div>
       <div class="sym-item"><div class="sym-n">Tres picos de montaña</div><div class="sym-d">Representan la topografía quebrada del Oriente antioqueño.</div></div>
-      <div class="sym-item"><div class="sym-n">Ondas de agua</div><div class="sym-d">Representan el río Pantanillo y la represa de La Fe.</div></div>
+      <div class="sym-item"><div class="sym-n">Ondas de agua</div><div class="sym-d">El río Pantanillo y la represa de La Fe.</div></div>
     </div>
     <div class="card">
-      <h3>Bandera — significado</h3>
-      <div style="background:#f0f0f0;border-radius:8px;overflow:hidden;margin-bottom:12px;height:100px;position:relative">
-        <div style="position:absolute;inset:0;background:white"></div>
-        <div style="position:absolute;right:0;top:0;width:0;height:0;border-style:solid;border-width:0 0 100px 200px;border-color:transparent transparent transparent #2d6a2d"></div>
-        <div style="position:absolute;right:20px;bottom:28px;font-size:18px">★ ★ ★</div>
-      </div>
-      <div class="sym-item"><div class="sym-n">Fondo blanco</div><div class="sym-d">Paz y tranquilidad que reina entre los habitantes del municipio.</div></div>
+      <h3>Bandera y colores oficiales</h3>
+      <div class="sym-item"><div class="sym-n">Fondo blanco</div><div class="sym-d">Paz y tranquilidad que reina entre los habitantes.</div></div>
       <div class="sym-item"><div class="sym-n">Triángulo verde</div><div class="sym-d">Esperanza, progreso y mejoramiento. Representa los paisajes naturales.</div></div>
-      <div class="sym-item"><div class="sym-n">Estrellas blancas</div><div class="sym-d">Representan las veredas del municipio.</div></div>
-      <div class="hl" style="margin-top:12px"><strong>Colores oficiales:</strong>
+      <div class="sym-item"><div class="sym-n">Estrellas blancas</div><div class="sym-d">Cada estrella es una vereda del municipio.</div></div>
+      <div class="hl" style="margin-top:12px">
+        <strong>Colores oficiales:</strong><br>
         <span class="badge" style="background:#2d6a2d;color:#fff;margin-top:6px">Verde</span>
         <span class="badge" style="border:1px solid #ccc">Blanco</span>
         <span class="badge" style="background:#fcde5a;color:#412402">Amarillo</span>
+      </div>
+      <div class="hl amber" style="margin-top:8px">
+        <strong>Gentilicio:</strong> Guarceño / Guarceña<br>
+        <strong>Apelativos:</strong> "Cuna de la Libertad" · "Capital del Mueble"
       </div>
     </div>
   </div>
@@ -389,405 +281,161 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
     <div class="g2">
       <div>
         <p style="font-weight:700;font-size:14px;color:#1a4a1a;margin-bottom:6px">Javiera Londoño (c.1696–1767)</p>
-        <p style="font-size:13px;color:#444;line-height:1.7">Nacida en Medellín, criada en Rionegro. En 1766 firmó el testamento liberando ~140 esclavos y cediéndoles las minas de El Guarzo. Su estatua de bronce (escultor Giuseppe Agelao) la muestra cortando cadenas. El Centro Cultural del municipio lleva su nombre.</p>
-        <div class="hl red" style="margin-top:8px;font-size:12px">Primera persona en liberar esclavos masivamente en el continente americano.</div>
+        <p style="font-size:13px;color:#444;line-height:1.7">Nacida en Medellín. En 1766 firmó el testamento liberando ~140 esclavos y cediéndoles las minas de El Guarzo. Su estatua de bronce (escultor Giuseppe Agelao) la muestra cortando cadenas.</p>
+        <div class="hl red" style="margin-top:8px;font-size:12px">Primera persona en liberar esclavos masivamente en el continente americano y el mundo.</div>
       </div>
       <div>
         <p style="font-weight:700;font-size:14px;color:#1a4a1a;margin-bottom:6px">Ignacio Castañeda (s. XVIII)</p>
-        <p style="font-size:13px;color:#444;line-height:1.7">Sargento español, esposo de Javiera. Llegaron juntos en 1734. Firmó el testamento de liberación. Los esclavos liberados adoptaron el apellido Castañeda. Su memoria se honra cada año con la Fiesta de los Negritos (26-30 de diciembre), tradición desde 1767.</p>
+        <p style="font-size:13px;color:#444;line-height:1.7">Sargento español, esposo de Javiera. Llegaron juntos en 1734. Los esclavos liberados adoptaron su apellido. Su memoria se honra cada año con la Fiesta de los Negritos (tradición desde 1767).</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ECONOMÍA -->
+<!-- ═══ ECONOMÍA ═══ -->
 <div id="economia" class="panel">
   <div class="g3" style="margin-bottom:14px">
     <div class="stat"><div class="stat-val">+115</div><div class="stat-lbl">Talleres de muebles</div></div>
     <div class="stat"><div class="stat-val">250 ha</div><div class="stat-lbl">Aguacate Hass exportación</div></div>
     <div class="stat"><div class="stat-val">#4</div><div class="stat-lbl">Productor aguacate Colombia</div></div>
   </div>
-  <div class="ilus-row">
+  <div class="row2">
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Fondo taller -->
-  <rect width="800" height="280" fill="#F5E6C8"/>
-  <!-- Techo de taller -->
-  <rect x="0" y="0" width="800" height="30" fill="#8B4513"/>
-  <!-- Pared ladrillo -->
-  <rect x="0" y="0" width="800" height="280" fill="#D4A76A"/>
-  <!-- Patrón ladrillo -->
-  <rect x="0" y="30" width="800" height="10" fill="#C4956A"/>
-  <rect x="0" y="48" width="800" height="10" fill="#C4956A"/>
-  <rect x="0" y="66" width="800" height="10" fill="#C4956A"/>
-  <rect x="0" y="84" width="800" height="10" fill="#C4956A"/>
-  <rect x="0" y="102" width="800" height="10" fill="#C4956A"/>
-  <!-- Piso madera -->
-  <rect x="0" y="230" width="800" height="50" fill="#8B6914"/>
-  <line x1="0" y1="245" x2="800" y2="245" stroke="#7a5c10" stroke-width="1"/>
-  <line x1="0" y1="260" x2="800" y2="260" stroke="#7a5c10" stroke-width="1"/>
-  <!-- Mesa de trabajo central -->
-  <rect x="250" y="160" width="300" height="12" rx="3" fill="#6B3A2A"/>
-  <rect x="255" y="172" width="10" height="55" fill="#5C3020"/>
-  <rect x="535" y="172" width="10" height="55" fill="#5C3020"/>
-  <rect x="280" y="172" width="10" height="55" fill="#5C3020"/>
-  <rect x="510" y="172" width="10" height="55" fill="#5C3020"/>
-  <!-- Plano/diseño en mesa -->
-  <rect x="290" y="145" width="130" height="17" rx="2" fill="#FFFAF0" stroke="#DEB887" stroke-width="1"/>
-  <line x1="300" y1="150" x2="410" y2="150" stroke="#8B4513" stroke-width=".8"/>
-  <line x1="300" y1="156" x2="390" y2="156" stroke="#8B4513" stroke-width=".8"/>
-  <!-- Mueble terminado: silla elegante -->
-  <rect x="90" y="140" width="60" height="40" rx="4" fill="#8B4513"/>
-  <rect x="88" y="138" width="64" height="8" rx="4" fill="#A0522D"/>
-  <rect x="93" y="178" width="8" height="50" fill="#6B3A2A"/>
-  <rect x="141" y="178" width="8" height="50" fill="#6B3A2A"/>
-  <rect x="90" y="225" width="62" height="6" rx="2" fill="#6B3A2A"/>
-  <!-- Mueble: cómoda -->
-  <rect x="580" y="120" width="110" height="110" rx="4" fill="#DEB887"/>
-  <rect x="585" y="125" width="45" height="45" rx="2" fill="#D2A679" stroke="#C4956A" stroke-width="1"/>
-  <rect x="640" y="125" width="45" height="45" rx="2" fill="#D2A679" stroke="#C4956A" stroke-width="1"/>
-  <rect x="585" y="178" width="45" height="45" rx="2" fill="#D2A679" stroke="#C4956A" stroke-width="1"/>
-  <rect x="640" y="178" width="45" height="45" rx="2" fill="#D2A679" stroke="#C4956A" stroke-width="1"/>
-  <!-- Jaladores cajones -->
-  <circle cx="607" cy="148" r="4" fill="#DAA520"/>
-  <circle cx="663" cy="148" r="4" fill="#DAA520"/>
-  <circle cx="607" cy="200" r="4" fill="#DAA520"/>
-  <circle cx="663" cy="200" r="4" fill="#DAA520"/>
-  <!-- Herramientas -->
-  <rect x="400" y="140" width="4" height="25" rx="2" fill="#8B4513"/>
-  <ellipse cx="402" cy="137" rx="7" ry="5" fill="#C0C0C0"/>
-  <rect x="420" y="142" width="4" height="22" rx="2" fill="#8B4513"/>
-  <ellipse cx="422" cy="139" rx="8" ry="4" fill="#A0A0A0"/>
-  <!-- Viruta de madera -->
-  <path d="M310 165 Q315 158 320 165 Q325 172 330 165" stroke="#DEB887" stroke-width="2" fill="none"/>
-  <path d="M340 162 Q345 155 350 162 Q355 169 360 162" stroke="#DEB887" stroke-width="2" fill="none"/>
-  <!-- Letrero taller -->
-  <rect x="280" y="25" width="240" height="40" rx="6" fill="#8B4513"/>
-  <text x="400" y="47" text-anchor="middle" font-size="14" fill="#FFFAF0" font-family="sans-serif" font-weight="bold">EBANISTERÍA EL RETIRO</text>
-  <!-- Texto pie -->
-  <rect x="220" y="248" width="360" height="22" rx="4" fill="rgba(0,0,0,.4)"/>
-  <text x="400" y="263" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">+115 talleres artesanales — Tradición de más de 100 años</text>
-</svg>
-      <div class="ilus-cap">Taller de ebanistería artesanal</div>
-      <div class="ilus-sub">Tradición de más de 100 años transmitida de generación en generación. +115 talleres en el municipio</div>
-    </div>
+  <div class="ph" id="ph_muebles">📷 Ebanistería El Retiro</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ebanister%C3%ADa_El_Retiro_Antioquia.jpg/960px-Ebanister%C3%ADa_El_Retiro_Antioquia.jpg" alt="Ebanistería El Retiro" height="220"
+       onload="document.getElementById('ph_muebles').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_muebles').innerHTML='⚠️ Ebanistería El Retiro'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Taller de ebanistería artesanal</div>
+  <div class='ilus-sub'>Tradición de más de 100 años. +115 talleres en el municipio. Festival AMOblar cada año</div>
+</div>
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Cielo campo abierto -->
-  <rect width="800" height="280" fill="#87CEEB"/>
-  <rect y="0" width="800" height="120" fill="#B0D9F5"/>
-  <!-- Montañas al fondo -->
-  <polygon points="0,180 120,100 240,140 360,90 480,130 600,85 720,120 800,95 800,200 0,200" fill="#5a8a40"/>
-  <!-- Cultivos aguacate en hileras -->
-  <rect x="0" y="185" width="800" height="95" fill="#4a7a2a"/>
-  <!-- Hileras de aguacate -->
-  <!-- Hilera 1 -->
-  <ellipse cx="80" cy="185" rx="45" ry="55" fill="#228B22"/>
-  <ellipse cx="80" cy="175" rx="38" ry="42" fill="#2d9e2d"/>
-  <rect x="76" y="215" width="8" height="30" fill="#4a2c0a"/>
-  <!-- Aguacates en árbol 1 -->
-  <ellipse cx="65" cy="168" rx="10" ry="14" fill="#2C5F2E" transform="rotate(-15,65,168)"/>
-  <ellipse cx="88" cy="162" rx="10" ry="14" fill="#2C5F2E" transform="rotate(10,88,162)"/>
-  <ellipse cx="75" cy="155" rx="9" ry="13" fill="#3a7a3a" transform="rotate(-5,75,155)"/>
-  <!-- Hilera 2 -->
-  <ellipse cx="220" cy="185" rx="45" ry="55" fill="#228B22"/>
-  <ellipse cx="220" cy="175" rx="38" ry="42" fill="#2d9e2d"/>
-  <rect x="216" y="215" width="8" height="30" fill="#4a2c0a"/>
-  <ellipse cx="205" cy="168" rx="10" ry="14" fill="#2C5F2E" transform="rotate(-10,205,168)"/>
-  <ellipse cx="228" cy="160" rx="10" ry="14" fill="#2C5F2E" transform="rotate(8,228,160)"/>
-  <!-- Hilera 3 -->
-  <ellipse cx="360" cy="183" rx="45" ry="55" fill="#228B22"/>
-  <ellipse cx="360" cy="173" rx="38" ry="42" fill="#2d9e2d"/>
-  <rect x="356" y="213" width="8" height="30" fill="#4a2c0a"/>
-  <ellipse cx="345" cy="166" rx="10" ry="14" fill="#2C5F2E" transform="rotate(-12,345,166)"/>
-  <ellipse cx="368" cy="159" rx="10" ry="14" fill="#2C5F2E" transform="rotate(9,368,159)"/>
-  <!-- Hilera 4 -->
-  <ellipse cx="500" cy="185" rx="45" ry="55" fill="#228B22"/>
-  <ellipse cx="500" cy="175" rx="38" ry="42" fill="#2d9e2d"/>
-  <rect x="496" y="215" width="8" height="30" fill="#4a2c0a"/>
-  <ellipse cx="485" cy="168" rx="10" ry="14" fill="#2C5F2E" transform="rotate(-8,485,168)"/>
-  <ellipse cx="508" cy="162" rx="10" ry="14" fill="#2C5F2E" transform="rotate(12,508,162)"/>
-  <!-- Hilera 5 -->
-  <ellipse cx="640" cy="185" rx="45" ry="55" fill="#228B22"/>
-  <ellipse cx="640" cy="175" rx="38" ry="42" fill="#2d9e2d"/>
-  <rect x="636" y="215" width="8" height="30" fill="#4a2c0a"/>
-  <ellipse cx="625" cy="168" rx="10" ry="14" fill="#2C5F2E" transform="rotate(-10,625,168)"/>
-  <ellipse cx="648" cy="160" rx="10" ry="14" fill="#2C5F2E" transform="rotate(7,648,160)"/>
-  <!-- Hilera 6 -->
-  <ellipse cx="760" cy="185" rx="40" ry="50" fill="#228B22"/>
-  <ellipse cx="760" cy="176" rx="34" ry="40" fill="#2d9e2d"/>
-  <rect x="756" y="210" width="8" height="30" fill="#4a2c0a"/>
-  <!-- Aguacate cortado en primer plano -->
-  <ellipse cx="400" cy="248" rx="30" ry="22" fill="#2C5F2E"/>
-  <ellipse cx="420" cy="248" rx="28" ry="20" fill="#567D46"/>
-  <ellipse cx="420" cy="248" rx="16" ry="12" fill="#F5E6C8"/>
-  <circle cx="420" cy="248" r="6" fill="#8B4513"/>
-  <!-- Texto -->
-  <rect x="200" y="258" width="400" height="18" rx="4" fill="rgba(0,0,0,.5)"/>
-  <text x="400" y="271" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif">Cultivos de aguacate Hass — Exportación a Europa y Japón</text>
-</svg>
-      <div class="ilus-cap">Cultivos de aguacate Hass</div>
-      <div class="ilus-sub">4.° productor de aguacate de exportación en Colombia. Despachos a Europa y Japón desde vereda Don Diego</div>
-    </div>
+  <div class="ph" id="ph_aguacate">📷 Aguacate Hass</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Haas_avocado.jpg/600px-Haas_avocado.jpg" alt="Aguacate Hass" height="220"
+       onload="document.getElementById('ph_aguacate').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_aguacate').innerHTML='⚠️ Aguacate Hass'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Cultivos de aguacate Hass</div>
+  <div class='ilus-sub'>4.° productor de aguacate de exportación en Colombia. Despachos a Europa y Japón</div>
+</div>
   </div>
   <div class="card">
     <h3>Sectores económicos</h3>
     <div class="econ-item"><div class="econ-lbl">Industria del mueble y ebanistería</div><div class="econ-bg"><div class="econ-bar" style="width:82%"></div></div></div>
     <div class="econ-item"><div class="econ-lbl">Ganadería y producción lechera</div><div class="econ-bg"><div class="econ-bar" style="width:58%;background:#639922"></div></div></div>
-    <div class="econ-item"><div class="econ-lbl">Agricultura (aguacate, mora, tomate, uchuva, café especial)</div><div class="econ-bg"><div class="econ-bar" style="width:48%;background:#97c459"></div></div></div>
+    <div class="econ-item"><div class="econ-lbl">Agricultura (aguacate, mora, tomate, café especial)</div><div class="econ-bg"><div class="econ-bar" style="width:48%;background:#97c459"></div></div></div>
     <div class="econ-item"><div class="econ-lbl">Turismo gastronómico y rural</div><div class="econ-bg"><div class="econ-bar" style="width:38%;background:#c0dd97"></div></div></div>
     <div class="econ-item"><div class="econ-lbl">Floricultura, avicultura, piscicultura</div><div class="econ-bg"><div class="econ-bar" style="width:24%;background:#eaf3de;border:1px solid #c0dd97"></div></div></div>
-    <div class="hl" style="margin-top:12px">El café del sur del municipio se vende bajo las marcas <em>Café Guarceño</em> y <em>Café 100% El Retiro</em>, cultivado, tostado y empacado por los propios productores locales.</div>
-    <div class="hl amber" style="margin-top:8px">El <strong>Festival AMOblar</strong> (agosto-septiembre, anual) reúne los principales ebanistas en el corredor vial. En 2025 se realizó del 30 de agosto al 5 de septiembre.</div>
+    <div class="hl amber" style="margin-top:12px">El <strong>Festival AMOblar</strong> (agosto-septiembre) reúne los principales ebanistas en el corredor vial. En 2025 se realizó del 30 de agosto al 5 de septiembre.</div>
   </div>
 </div>
 
-<!-- CULTURA -->
+<!-- ═══ CULTURA ═══ -->
 <div id="cultura" class="panel">
-  <div class="ilus-row">
+  <div class="row2">
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Noche festiva -->
-  <rect width="800" height="280" fill="#1a1a3e"/>
-  <!-- Estrellas -->
-  <circle cx="50" cy="20" r="2" fill="white" opacity=".8"/>
-  <circle cx="150" cy="15" r="1.5" fill="white" opacity=".7"/>
-  <circle cx="300" cy="25" r="2" fill="white" opacity=".9"/>
-  <circle cx="500" cy="10" r="1.5" fill="white" opacity=".7"/>
-  <circle cx="650" cy="30" r="2" fill="white" opacity=".8"/>
-  <circle cx="750" cy="18" r="1.5" fill="white" opacity=".6"/>
-  <!-- Iglesia iluminada al fondo -->
-  <rect x="310" y="70" width="180" height="160" rx="3" fill="#F5E6C8" opacity=".9"/>
-  <rect x="340" y="40" width="40" height="90" rx="2" fill="#EDE0C4"/>
-  <rect x="420" y="40" width="40" height="90" rx="2" fill="#EDE0C4"/>
-  <!-- Luces en ventanas -->
-  <rect x="352" y="70" width="16" height="24" rx="8" fill="#FFD700" opacity=".9"/>
-  <rect x="432" y="70" width="16" height="24" rx="8" fill="#FFD700" opacity=".9"/>
-  <rect x="370" y="115" width="60" height="50" rx="4" fill="#8B4513"/>
-  <!-- Guirnaldas de luces en parque -->
-  <path d="M0 120 Q100 115 200 120 Q300 125 400 120 Q500 115 600 120 Q700 125 800 120" stroke="#FFD700" stroke-width="1.5" fill="none"/>
-  <path d="M0 130 Q100 125 200 130 Q300 135 400 130 Q500 125 600 130 Q700 135 800 130" stroke="#FFD700" stroke-width="1" fill="none" opacity=".6"/>
-  <!-- Bombillos en guirnalda -->
-  <circle cx="100" cy="120" r="4" fill="#FFD700" opacity=".9"/>
-  <circle cx="200" cy="125" r="4" fill="#FF6B35" opacity=".9"/>
-  <circle cx="300" cy="120" r="4" fill="#FFD700" opacity=".9"/>
-  <circle cx="400" cy="125" r="4" fill="#FF6B35" opacity=".9"/>
-  <circle cx="500" cy="120" r="4" fill="#FFD700" opacity=".9"/>
-  <circle cx="600" cy="125" r="4" fill="#FF6B35" opacity=".9"/>
-  <circle cx="700" cy="120" r="4" fill="#FFD700" opacity=".9"/>
-  <!-- Personas bailando / fiesta -->
-  <!-- Figura 1 -->
-  <circle cx="150" cy="185" r="10" fill="#D2691E"/>
-  <rect x="144" y="195" width="12" height="30" rx="3" fill="#C0392B"/>
-  <path d="M144 210 L130 225 M156 210 L170 225" stroke="#D2691E" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <!-- Figura 2 -->
-  <circle cx="250" cy="183" r="10" fill="#8B4513"/>
-  <rect x="244" y="193" width="12" height="30" rx="3" fill="#2980B9"/>
-  <path d="M244 205 L232 215 M256 205 L268 215" stroke="#8B4513" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <!-- Figura 3 -->
-  <circle cx="550" cy="185" r="10" fill="#D2691E"/>
-  <rect x="544" y="195" width="12" height="30" rx="3" fill="#E91E63"/>
-  <path d="M544 210 L530 220 M556 210 L570 220" stroke="#D2691E" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <!-- Figura 4 -->
-  <circle cx="650" cy="183" r="10" fill="#8B4513"/>
-  <rect x="644" y="193" width="12" height="30" rx="3" fill="#4CAF50"/>
-  <path d="M644 205 L632 218 M656 205 L668 218" stroke="#8B4513" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <!-- Fuegos artificiales -->
-  <circle cx="100" cy="60" r="3" fill="#FF6B35"/>
-  <path d="M100 60 L90 40 M100 60 L115 42 M100 60 L120 60 M100 60 L115 78 M100 60 L100 80 M100 60 L85 78 M100 60 L80 60 M100 60 L85 42" stroke="#FFD700" stroke-width="1.5" fill="none"/>
-  <circle cx="700" cy="55" r="3" fill="#E91E63"/>
-  <path d="M700 55 L690 35 M700 55 L715 37 M700 55 L720 55 M700 55 L715 73 M700 55 L700 75 M700 55 L685 73 M700 55 L680 55 M700 55 L685 37" stroke="#FF6B35" stroke-width="1.5" fill="none"/>
-  <!-- Piso plaza -->
-  <rect x="0" y="230" width="800" height="50" fill="#2C1810"/>
-  <!-- Texto -->
-  <rect x="180" y="248" width="440" height="22" rx="4" fill="rgba(255,255,255,.15)"/>
-  <text x="400" y="263" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Fiestas de los Negritos (26-30 dic.) — Las más populosas de Antioquia</text>
-</svg>
-      <div class="ilus-cap">Fiestas de los Negritos (26-30 de diciembre)</div>
-      <div class="ilus-sub">Las más populosas de Antioquia. Origen en el testamento de Javiera Londoño (1767). Tradición de 250+ años</div>
-    </div>
+  <div class="ph" id="ph_fiestas">📷 Fiestas de los Negritos El Retiro</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fiestas_El_Retiro_Antioquia.jpg/960px-Fiestas_El_Retiro_Antioquia.jpg" alt="Fiestas de los Negritos El Retiro" height="220"
+       onload="document.getElementById('ph_fiestas').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_fiestas').innerHTML='⚠️ Fiestas de los Negritos El Retiro'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Fiestas de los Negritos (26-30 de diciembre)</div>
+  <div class='ilus-sub'>Las más populosas de Antioquia. Origen: testamento de Javiera Londoño (1767). Tradición de 250+ años</div>
+</div>
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Cielo -->
-  <rect width="800" height="280" fill="#87CEEB"/>
-  <rect y="0" width="800" height="140" fill="#B0D9F5"/>
-  <!-- Nubes -->
-  <ellipse cx="120" cy="40" rx="60" ry="25" fill="white" opacity=".85"/>
-  <ellipse cx="160" cy="35" rx="50" ry="20" fill="white" opacity=".9"/>
-  <ellipse cx="600" cy="55" rx="70" ry="28" fill="white" opacity=".8"/>
-  <ellipse cx="650" cy="48" rx="55" ry="22" fill="white" opacity=".85"/>
-  <!-- Montañas fondo -->
-  <polygon points="0,160 80,70 160,120 240,60 320,100 400,50 480,90 560,55 640,95 720,65 800,100 800,200 0,200" fill="#4a7c59"/>
-  <polygon points="0,170 100,90 200,130 300,80 400,110 500,75 600,105 700,80 800,110 800,200 0,200" fill="#3b6d40"/>
-  <!-- Montañas primer plano -->
-  <polygon points="0,200 150,120 300,170 450,110 600,160 750,115 800,140 800,280 0,280" fill="#2d5a2d"/>
-  <!-- Valles verdes -->
-  <rect x="0" y="220" width="800" height="60" fill="#4a8a3a"/>
-  <!-- Casas pueblo en valle -->
-  <rect x="320" y="195" width="22" height="28" rx="2" fill="#f5e6c8"/>
-  <polygon points="319,195 342,195 330,183" fill="#c0392b"/>
-  <rect x="348" y="198" width="20" height="25" rx="2" fill="#faebd7"/>
-  <polygon points="347,198 368,198 358,187" fill="#8b4513"/>
-  <rect x="374" y="193" width="24" height="30" rx="2" fill="#fffaf0"/>
-  <polygon points="373,193 398,193 386,180" fill="#c0392b"/>
-  <!-- Torre iglesia -->
-  <rect x="355" y="170" width="10" height="30" rx="1" fill="#f5f5dc"/>
-  <rect x="353" y="166" width="14" height="6" rx="1" fill="#daa520"/>
-  <!-- Árboles primer plano -->
-  <ellipse cx="100" cy="225" rx="35" ry="28" fill="#1a5c1a"/>
-  <rect x="97" y="240" width="6" height="20" fill="#6b4226"/>
-  <ellipse cx="680" cy="220" rx="40" ry="32" fill="#1a5c1a"/>
-  <rect x="677" y="238" width="6" height="22" fill="#6b4226"/>
-  <ellipse cx="220" cy="235" rx="28" ry="22" fill="#228B22"/>
-  <ellipse cx="570" cy="230" rx="30" ry="24" fill="#228B22"/>
-  <!-- Carretera -->
-  <path d="M0 265 Q400 258 800 268" stroke="#ccc" stroke-width="6" fill="none"/>
-  <!-- Bruma de altiplano -->
-  <rect x="0" y="130" width="800" height="30" fill="white" opacity=".15"/>
-</svg>
-      <div class="ilus-cap">Parque principal y cabecera municipal</div>
-      <div class="ilus-sub">Patrimonio arquitectónico de Antioquia. Centro histórico colonial conservado. La Retreta del primer sábado de cada mes</div>
-    </div>
+  <div class="ph" id="ph_banda">📷 Banda Sinfónica de El Retiro</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Banda_El_Retiro_Antioquia.jpg/960px-Banda_El_Retiro_Antioquia.jpg" alt="Banda Sinfónica de El Retiro" height="220"
+       onload="document.getElementById('ph_banda').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_banda').innerHTML='⚠️ Banda Sinfónica de El Retiro'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Banda Sinfónica de El Retiro</div>
+  <div class='ilus-sub'>Fundada en 1920. Más de 100 años. La Retreta del primer sábado de cada mes es tradición desde los años 60</div>
+</div>
   </div>
   <div class="card">
     <h3>Festividades del año</h3>
-    <div class="lugar" style="border-color:#c0392b"><div class="lugar-n" style="color:#c0392b">Fiestas de los Negritos (26-30 dic.)</div><div class="lugar-d">Las más populosas de Antioquia. Desde 1767, herederos de los esclavos liberados por Javiera Londoño celebran una misa y fiesta en su honor. Orquestas, torneos deportivos y ruta de murales.</div></div>
-    <div class="lugar"><div class="lugar-n">Día de la Identidad Guarceña (15 sep.)</div><div class="lugar-d">Fecha definida por el Concejo municipal para afianzar las tradiciones y el sentido de pertenencia guarceño.</div></div>
+    <div class="lugar" style="border-color:#c0392b"><div class="lugar-n" style="color:#c0392b">Fiestas de los Negritos (26-30 dic.)</div><div class="lugar-d">Las más populosas de Antioquia. Desde 1767, los descendientes de los esclavos liberados por Javiera Londoño celebran una misa y fiesta en su honor. Orquestas, torneos deportivos, ruta de murales.</div></div>
+    <div class="lugar"><div class="lugar-n">Día de la Identidad Guarceña (15 sep.)</div><div class="lugar-d">Fecha del Concejo municipal para afianzar las tradiciones y sentido de pertenencia guarceño.</div></div>
     <div class="lugar" style="border-color:#ba7517"><div class="lugar-n" style="color:#ba7517">Festival AMOblar — Mueble y la Madera (ago-sep.)</div><div class="lugar-d">Feria anual de ebanistería. Exposición comercial y cultural a lo largo del corredor vial.</div></div>
-    <div class="lugar" style="border-color:#534ab7"><div class="lugar-n" style="color:#534ab7">Encuentro Nacional de Danzas Folclóricas (oct.)</div><div class="lugar-d">Certamen con casi 100 años de tradición. Grupos destacados por ritmo y propuestas coreográficas.</div></div>
-    <div class="lugar" style="border-color:#534ab7"><div class="lugar-n" style="color:#534ab7">Encuentro Nacional de la Dulzaina (jul.) y Duetos y Estudiantinas (ago.)</div><div class="lugar-d">El Retiro es pueblo musical por tradición. Su mezcla indígena, española y africana le dio una identidad musical única.</div></div>
-    <div class="lugar"><div class="lugar-n">Retreta — primer sábado de cada mes</div><div class="lugar-d">La Banda Sinfónica toca en el parque principal. Tradición ininterrumpida desde los años 60. La banda fue fundada en 1920.</div></div>
+    <div class="lugar" style="border-color:#534ab7"><div class="lugar-n" style="color:#534ab7">Encuentro Nacional de Danzas Folclóricas (oct.)</div><div class="lugar-d">Certamen con casi 100 años de tradición dancística.</div></div>
+    <div class="lugar" style="border-color:#534ab7"><div class="lugar-n" style="color:#534ab7">Encuentro Nacional de la Dulzaina (jul.) y Duetos y Estudiantinas (ago.)</div><div class="lugar-d">El Retiro es pueblo musical por tradición. Su mezcla indígena, española y africana le dio identidad musical única.</div></div>
+    <div class="lugar"><div class="lugar-n">Retreta — primer sábado de cada mes</div><div class="lugar-d">La Banda Sinfónica toca en el parque principal. Ininterrumpida desde los años 60.</div></div>
     <div class="lugar"><div class="lugar-n">Semana Santa en Vivo (mar-abr.)</div><div class="lugar-d">Representación teatral con versión infantil que involucra a los niños del municipio.</div></div>
   </div>
   <div class="card">
     <h3>Gastronomía</h3>
     <div class="g2" style="font-size:13px;color:#444;line-height:1.7">
-      <div><strong style="color:#1a4a1a">Cocina paisa tradicional:</strong> Bandeja paisa, arepas, quesito, sancocho, chicharrón, chorizos, mazamorra, truchas en Sierra Blanca. Restaurantes icónicos: El Pensil de la Abuela (70 años), La Cantaleta, Sancho Paisa, Serenata Paisa.</div>
-      <div><strong style="color:#1a4a1a">Cocina de autor e internacional:</strong> Katar Gastrobar (Mall La Fe) — chef Camilo Pat, técnicas europeas con ingredientes locales. También: Creativo Sushi, Suspiro (peruana), Samborondón (española), Rodizzio (brasilera), El Rancho e la Chacha (argentina).</div>
+      <div><strong style="color:#1a4a1a">Cocina paisa tradicional:</strong> Bandeja paisa, arepas, quesito, sancocho, chicharrón, mazamorra, truchas. Restaurantes icónicos: El Pensil de la Abuela (70 años), La Cantaleta, Sancho Paisa.</div>
+      <div><strong style="color:#1a4a1a">Cocina de autor:</strong> Katar Gastrobar (Mall La Fe) — chef Camilo Pat, técnicas europeas con ingredientes locales. También cocina peruana, española, brasilera y argentina.</div>
     </div>
   </div>
 </div>
 
-<!-- TURISMO -->
+<!-- ═══ TURISMO ═══ -->
 <div id="turismo" class="panel">
-  <div class="ilus-row">
+  <div class="row2">
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Cielo -->
-  <rect width="800" height="280" fill="#87CEEB"/>
-  <!-- Vegetación selva tropical -->
-  <ellipse cx="50" cy="120" rx="80" ry="100" fill="#1a6620"/>
-  <ellipse cx="750" cy="120" rx="80" ry="100" fill="#1a6620"/>
-  <ellipse cx="150" cy="80" rx="70" ry="85" fill="#228B22"/>
-  <ellipse cx="650" cy="80" rx="70" ry="85" fill="#228B22"/>
-  <!-- Paredes rocosas cañón -->
-  <polygon points="0,0 0,280 180,280 200,0" fill="#8B7355"/>
-  <polygon points="800,0 800,280 620,280 600,0" fill="#8B7355"/>
-  <polygon points="0,0 200,0 220,60 180,280 0,280" fill="#9C8465"/>
-  <polygon points="800,0 600,0 580,60 620,280 800,280" fill="#9C8465"/>
-  <!-- Musgo en rocas -->
-  <rect x="0" y="150" width="180" height="130" fill="#5a8040" opacity=".5"/>
-  <rect x="620" y="150" width="180" height="130" fill="#5a8040" opacity=".5"/>
-  <!-- Cascada principal -->
-  <rect x="335" y="0" width="130" height="200" rx="5" fill="white" opacity=".85"/>
-  <rect x="345" y="0" width="20" height="200" fill="white" opacity=".5"/>
-  <rect x="375" y="0" width="15" height="200" fill="white" opacity=".4"/>
-  <rect x="415" y="0" width="20" height="200" fill="white" opacity=".5"/>
-  <!-- Efecto bruma cascada -->
-  <ellipse cx="400" cy="195" rx="100" ry="30" fill="white" opacity=".7"/>
-  <ellipse cx="400" cy="205" rx="80" ry="22" fill="white" opacity=".5"/>
-  <!-- Poza de agua -->
-  <ellipse cx="400" cy="235" rx="160" ry="40" fill="#1E90FF" opacity=".85"/>
-  <ellipse cx="400" cy="235" rx="140" ry="34" fill="#4FC3F7" opacity=".6"/>
-  <!-- Ondas poza -->
-  <ellipse cx="400" cy="240" rx="60" ry="14" fill="none" stroke="white" stroke-width="1.5" opacity=".5"/>
-  <ellipse cx="400" cy="240" rx="90" ry="20" fill="none" stroke="white" stroke-width="1" opacity=".3"/>
-  <!-- Vegetación borde poza -->
-  <ellipse cx="220" cy="258" rx="35" ry="20" fill="#1a6620"/>
-  <ellipse cx="580" cy="258" rx="35" ry="20" fill="#1a6620"/>
-  <!-- Helechos -->
-  <path d="M200 260 Q190 240 210 235" stroke="#228B22" stroke-width="3" fill="none"/>
-  <path d="M200 260 Q210 240 225 238" stroke="#228B22" stroke-width="3" fill="none"/>
-  <path d="M600 260 Q610 240 595 235" stroke="#228B22" stroke-width="3" fill="none"/>
-  <path d="M600 260 Q590 240 578 238" stroke="#228B22" stroke-width="3" fill="none"/>
-  <!-- Piso tierra húmeda -->
-  <rect x="0" y="265" width="800" height="15" fill="#5C4033"/>
-  <!-- Texto -->
-  <rect x="230" y="248" width="340" height="22" rx="4" fill="rgba(0,0,0,.45)"/>
-  <text x="400" y="263" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Salto del Tequendamita — Patrimonio turístico de Antioquia</text>
-</svg>
-      <div class="ilus-cap">Salto del Tequendamita</div>
-      <div class="ilus-sub">Patrimonio turístico de Antioquia. A 7 km de la cabecera, vereda Don Diego, vía La Ceja</div>
-    </div>
+  <div class="ph" id="ph_salto">📷 Salto del Tequendamita</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Salto_Tequendamita_El_Retiro.jpg/960px-Salto_Tequendamita_El_Retiro.jpg" alt="Salto del Tequendamita" height="220"
+       onload="document.getElementById('ph_salto').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_salto').innerHTML='⚠️ Salto del Tequendamita'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Salto del Tequendamita — Patrimonio turístico de Antioquia</div>
+  <div class='ilus-sub'>A 7 km de la cabecera, vereda Don Diego, vía La Ceja</div>
+</div>
     <div class="ilus">
-      
-<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" width="100%" height="220">
-  <!-- Cielo entre árboles -->
-  <rect width="800" height="280" fill="#87CEEB"/>
-  <!-- Dosel del bosque -->
-  <ellipse cx="100" cy="60" rx="130" ry="90" fill="#1a5c1a"/>
-  <ellipse cx="300" cy="40" rx="140" ry="80" fill="#228B22"/>
-  <ellipse cx="500" cy="55" rx="130" ry="85" fill="#1a5c1a"/>
-  <ellipse cx="700" cy="45" rx="140" ry="90" fill="#228B22"/>
-  <ellipse cx="0" cy="80" rx="80" ry="70" fill="#1a5c1a"/>
-  <ellipse cx="800" cy="70" rx="90" ry="80" fill="#1a5c1a"/>
-  <!-- Luz que se cuela -->
-  <path d="M350 60 L330 180" stroke="rgba(255,255,180,.4)" stroke-width="25"/>
-  <path d="M420 50 L450 180" stroke="rgba(255,255,180,.3)" stroke-width="20"/>
-  <path d="M250 70 L220 190" stroke="rgba(255,255,180,.25)" stroke-width="15"/>
-  <!-- Troncos árboles -->
-  <rect x="75" y="100" width="25" height="180" rx="5" fill="#5C3A1E"/>
-  <rect x="268" y="85" width="28" height="195" rx="5" fill="#5C3A1E"/>
-  <rect x="465" y="95" width="26" height="185" rx="5" fill="#5C3A1E"/>
-  <rect x="668" y="90" width="27" height="190" rx="5" fill="#5C3A1E"/>
-  <!-- Helecho grande -->
-  <path d="M400 250 Q370 200 340 180" stroke="#2d8b2d" stroke-width="4" fill="none"/>
-  <path d="M340 180 Q330 170 335 160" stroke="#228B22" stroke-width="2" fill="none"/>
-  <path d="M340 180 Q355 172 360 162" stroke="#228B22" stroke-width="2" fill="none"/>
-  <path d="M400 250 Q430 200 460 182" stroke="#2d8b2d" stroke-width="4" fill="none"/>
-  <path d="M460 182 Q450 172 455 160" stroke="#228B22" stroke-width="2" fill="none"/>
-  <path d="M460 182 Q472 172 470 162" stroke="#228B22" stroke-width="2" fill="none"/>
-  <!-- Musgo suelo -->
-  <rect x="0" y="240" width="800" height="40" fill="#3d7a2a"/>
-  <!-- Flores silvestres -->
-  <circle cx="180" cy="238" r="5" fill="#FFD700"/>
-  <circle cx="620" cy="240" r="5" fill="#FF69B4"/>
-  <circle cx="380" cy="238" r="4" fill="#FF6B35"/>
-  <!-- Rayo de luz central -->
-  <path d="M390 40 L370 240" stroke="rgba(255,255,200,.2)" stroke-width="40"/>
-  <!-- Pájaro en vuelo -->
-  <path d="M500 80 Q510 75 520 80" stroke="#333" stroke-width="2" fill="none"/>
-  <path d="M510 80 Q520 75 530 80" stroke="#333" stroke-width="2" fill="none"/>
-  <!-- Texto -->
-  <rect x="210" y="248" width="380" height="22" rx="4" fill="rgba(0,0,0,.45)"/>
-  <text x="400" y="263" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">Reserva Ecológica San Sebastián La Castellana — 200 ha de bosque tropical</text>
-</svg>
-      <div class="ilus-cap">Reserva Ecológica San Sebastián La Castellana</div>
-      <div class="ilus-sub">200 ha de bosque húmedo tropical. Senderismo y avistamiento de aves. Entre El Retiro y Envigado</div>
-    </div>
+  <div class="ph" id="ph_bosque">📷 Reserva San Sebastián La Castellana</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Reserva_San_Sebastian_La_Castellana_El_Retiro.jpg/960px-Reserva_San_Sebastian_La_Castellana_El_Retiro.jpg" alt="Reserva San Sebastián La Castellana" height="220"
+       onload="document.getElementById('ph_bosque').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_bosque').innerHTML='⚠️ Reserva San Sebastián La Castellana'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Reserva Ecológica San Sebastián La Castellana</div>
+  <div class='ilus-sub'>200 ha de bosque húmedo tropical entre El Retiro y Envigado</div>
+</div>
+  </div>
+  <div class="row2">
+    <div class="ilus">
+  <div class="ph" id="ph_parque">📷 Parque principal El Retiro</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Parque_del_Retiro-Antioquia.jpg/960px-Parque_del_Retiro-Antioquia.jpg" alt="Parque principal El Retiro" height="220"
+       onload="document.getElementById('ph_parque').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_parque').innerHTML='⚠️ Parque principal El Retiro'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Parque principal Santander — Patrimonio arquitectónico de Antioquia</div>
+  <div class='ilus-sub'>Centro histórico colonial. Iglesia, casa de gobierno, tiendas artesanales</div>
+</div>
+    <div class="ilus">
+  <div class="ph" id="ph_panoramica">📷 Vista El Retiro</div>
+  <img referrerpolicy="no-referrer" crossorigin="anonymous"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg/960px-2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg" alt="Vista El Retiro" height="220"
+       onload="document.getElementById('ph_panoramica').style.display='none';this.style.display='block'"
+       onerror="document.getElementById('ph_panoramica').innerHTML='⚠️ Vista El Retiro'"
+       style="display:none;width:100%;height:220px;object-fit:cover">
+  <div class="ilus-cap">Paisaje rural del municipio</div>
+  <div class='ilus-sub'>Altiplano del Oriente antioqueño a 2.175 m s.n.m.</div>
+</div>
   </div>
   <div class="card">
     <h3>Atractivos turísticos</h3>
-    <div class="lugar"><div class="lugar-n">Salto del Tequendamita</div><div class="lugar-d">Cascada declarada patrimonio turístico de Antioquia. A 7 km de la cabecera en la vereda Don Diego, vía La Ceja. Una de las mejores ofertas ecoturísticas del Oriente antioqueño.</div></div>
-    <div class="lugar"><div class="lugar-n">Represa de La Fe — Parque Los Salados</div><div class="lugar-d">Reserva hídrica regional. Ecoturismo, caminatas, fotografía de naturaleza. Canopy, paintball y paseos en bote. En su entorno: Mall La Fe con gastronomía de autor.</div></div>
-    <div class="lugar"><div class="lugar-n">Parque principal Santander y cabecera municipal</div><div class="lugar-d">Patrimonio arquitectónico de Antioquia. Iglesia Nuestra Señora del Rosario, casa de gobierno, tiendas de artesanías. Semipeatonalizado con lámparas coloniales.</div></div>
-    <div class="lugar"><div class="lugar-n">Centro Cultural Javiera Londoño y Casa Museo de la Identidad Guarceña</div><div class="lugar-d">Estatua de bronce de Javiera (Giuseppe Agelao) que muestra cortando cadenas. Historia de la primera liberación de esclavos en América.</div></div>
-    <div class="lugar"><div class="lugar-n">Capilla y Museo Nuestra Señora de los Dolores y San José</div><div class="lugar-d">Construida en 1733 por los esclavos de Javiera Londoño con adobe cocido. Declarada Monumento Histórico. Museo de arte religioso con colecciones de Arte Quiteño y español.</div></div>
-    <div class="lugar"><div class="lugar-n">Reserva Ecológica San Sebastián La Castellana</div><div class="lugar-d">200 ha de bosque húmedo tropical entre El Retiro y Envigado. Senderismo, avistamiento de aves, flora y fauna del bosque andino.</div></div>
-    <div class="lugar"><div class="lugar-n">Corredor mueblero y ebanisterías</div><div class="lugar-d">Más de 115 talleres a lo largo del municipio. Visitar los talleres es una experiencia única para conocer la tradición centenaria guarceña.</div></div>
-    <div class="lugar"><div class="lugar-n">Ruta de los murales</div><div class="lugar-d">Arte urbano en las calles de la cabecera que cuenta la historia e identidad del municipio. Recorrido a pie.</div></div>
-    <div class="lugar"><div class="lugar-n">Caminos veredales, herradura y cascadas</div><div class="lugar-d">Recorridos rurales por caminos precolombinos para caminantes y caballistas. Cascadas en Nazareth, La Honda, El Carmen y Normandía.</div></div>
-    <div class="lugar"><div class="lugar-n">Hacienda Fizebad — Club Campestre Los Salados</div><div class="lugar-d">Sitio histórico y turístico. Referente de la arquitectura rural antioqueña.</div></div>
+    <div class="lugar"><div class="lugar-n">Salto del Tequendamita</div><div class="lugar-d">Cascada patrimonio turístico de Antioquia, a 7 km por la vía a La Ceja. Una de las mejores ofertas ecoturísticas del Oriente antioqueño.</div></div>
+    <div class="lugar"><div class="lugar-n">Represa de La Fe — Parque Los Salados</div><div class="lugar-d">Reserva hídrica regional. Canopy, paintball, senderismo y paseos en bote. Mall La Fe con gastronomía de autor.</div></div>
+    <div class="lugar"><div class="lugar-n">Parque principal Santander y cabecera</div><div class="lugar-d">Patrimonio arquitectónico de Antioquia. Iglesia Nuestra Señora del Rosario, casa de gobierno, tiendas de artesanías.</div></div>
+    <div class="lugar"><div class="lugar-n">Centro Cultural Javiera Londoño</div><div class="lugar-d">Estatua de bronce de Javiera (Giuseppe Agelao) que muestra cortando cadenas. Historia de la primera liberación de esclavos en América.</div></div>
+    <div class="lugar"><div class="lugar-n">Reserva Ecológica San Sebastián La Castellana</div><div class="lugar-d">200 ha de bosque húmedo tropical entre El Retiro y Envigado. Senderismo y avistamiento de aves.</div></div>
+    <div class="lugar"><div class="lugar-n">Corredor mueblero (+115 talleres)</div><div class="lugar-d">Visitar los talleres artesanales es una experiencia única para conocer la tradición centenaria guarceña.</div></div>
+    <div class="lugar"><div class="lugar-n">Ruta de los murales</div><div class="lugar-d">Arte urbano en las calles de la cabecera que cuenta la historia e identidad del municipio.</div></div>
+    <div class="lugar"><div class="lugar-n">Caminos veredales y cascadas</div><div class="lugar-d">Recorridos rurales por caminos precolombinos. Cascadas en Nazareth, La Honda, El Carmen y Normandía.</div></div>
     <div class="hl blue" style="margin-top:10px"><strong>Dato internacional:</strong> El <em>Lycée Français de Medellín</em> tiene su campus en la vereda Carrizales (km 10). El municipio cuenta con 2 operadores turísticos y 4 guías locales certificados.</div>
   </div>
 </div>
 
-<!-- DATOS -->
+<!-- ═══ DATOS ═══ -->
 <div id="datos" class="panel">
   <div class="g3" style="margin-bottom:14px">
     <div class="stat"><div class="stat-val">23.514</div><div class="stat-lbl">Censo DANE 2018</div></div>
@@ -806,7 +454,6 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
       <div class="fila"><span class="fila-k">Altitud</span><span>2.175 m s.n.m.</span></div>
       <div class="fila"><span class="fila-k">Temperatura</span><span>16 °C promedio</span></div>
       <div class="fila"><span class="fila-k">Extensión</span><span>243 km²</span></div>
-      <div class="fila"><span class="fila-k">Zona urbana</span><span>1 km²</span></div>
       <div class="fila"><span class="fila-k">Veredas</span><span>20</span></div>
       <div class="fila"><span class="fila-k">Distancia Medellín</span><span>28 km · ~33 min vía Las Palmas</span></div>
       <div class="fila"><span class="fila-k">Coordenadas</span><span>6°05′N 75°30′W</span></div>
@@ -816,10 +463,8 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
       <div class="card">
         <h3>Crecimiento poblacional</h3>
         <div class="fila"><span class="fila-k">1912</span><span>5.477 hab.</span></div>
-        <div class="fila"><span class="fila-k">1938</span><span>6.102 hab.</span></div>
         <div class="fila"><span class="fila-k">1964</span><span>8.230 hab.</span></div>
         <div class="fila"><span class="fila-k">1985</span><span>12.110 hab.</span></div>
-        <div class="fila"><span class="fila-k">1993</span><span>15.006 hab.</span></div>
         <div class="fila"><span class="fila-k">2005</span><span>16.976 hab.</span></div>
         <div class="fila"><span class="fila-k">2018</span><span>23.514 hab. (urb: 12.479 · rur: 11.035)</span></div>
       </div>
@@ -827,23 +472,21 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
         <h3>Nombres históricos</h3>
         <div class="fila"><span class="fila-k">Nombre original</span><span>Aventaderos de Guarzo / El Cuarzo</span></div>
         <div class="fila"><span class="fila-k">Desde 1790</span><span>Vereda El Guarzo (de Rionegro)</span></div>
-        <div class="fila"><span class="fila-k">Nombre intermedio</span><span>Potreros del Retiro / Buen Retiro</span></div>
         <div class="fila"><span class="fila-k">Desde 1814</span><span>El Retiro (nombre oficial)</span></div>
       </div>
-    </div>
-  </div>
-  <div class="card">
-    <h3>Contexto social</h3>
-    <div class="g2" style="font-size:13px;color:#444;line-height:1.7">
-      <div><strong style="color:#1a4a1a">Municipio "dormitorio" de Medellín:</strong> Aprox. 25.000 vecinos duermen o estudian en El Retiro pero trabajan en el Valle de Aburrá. Crecimiento urbanístico acelerado con fincas de recreo y vivienda campestre.</div>
-      <div><strong style="color:#1a4a1a">Seguridad y calidad de vida:</strong> Históricamente no fue afectado por la violencia bipartidista ni el narcotráfico. Uno de los municipios más tranquilos de Antioquia. Ambiente ideal para residencia cerca de Medellín.</div>
+      <div class="card">
+        <h3>Apoderativos</h3>
+        <div class="fila"><span class="fila-k">Título histórico</span><span>Cuna de la Libertad</span></div>
+        <div class="fila"><span class="fila-k">Título económico</span><span>Capital del Mueble</span></div>
+        <div class="fila"><span class="fila-k">Gentilicio</span><span>Guarceño / Guarceña</span></div>
+      </div>
     </div>
   </div>
 </div>
 
 <footer>
-  Información verificada · Fuentes: Alcaldía de El Retiro (elretiro.gov.co) · DANE Censo 2018 · Wikipedia · Antioquia es Mágica · Comfenalco Antioquia · El Colombiano · Vivir en El Poblado<br>
-  Ilustraciones: representaciones didácticas del municipio · Colegio Loyola para la Ciencia y la Innovación — Medellín, 2025
+  Información verificada · Fuentes: Alcaldía de El Retiro · DANE Censo 2018 · Wikipedia · Antioquia es Mágica · Comfenalco Antioquia<br>
+  Imágenes: Wikimedia Commons (CC BY-SA) · Colegio Loyola para la Ciencia y la Innovación — Medellín, 2025
 </footer>
 
 <script>
@@ -852,6 +495,7 @@ function show(id,btn){
   document.querySelectorAll('.tab-bar button').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  window.scrollTo(0,0);
 }
 </script>
 </body>
