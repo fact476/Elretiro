@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>El Retiro, Antioquia</title>
+<title>El Retiro, Antioquia — Ficha completa</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Segoe UI",Arial,sans-serif;background:#f2f5ee;color:#222}
@@ -13,57 +13,61 @@ h1{font-size:30px;font-weight:700;margin-bottom:4px}
 .chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 12px;font-size:12px}
 .tab-bar{display:flex;background:#2d6a2d;overflow-x:auto;position:sticky;top:0;z-index:99}
-.tab-bar button{flex:1;min-width:85px;padding:11px 6px;background:none;border:none;color:rgba(255,255,255,.7);font-size:13px;font-weight:500;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tab-bar button{flex:1;min-width:80px;padding:11px 6px;background:none;border:none;color:rgba(255,255,255,.7);font-size:12px;font-weight:500;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
 .tab-bar button.active{color:#fff;border-bottom-color:#fcde5a}
-.panel{display:none;padding:20px;max-width:980px;margin:0 auto}
+.panel{display:none;padding:18px;max-width:980px;margin:0 auto}
 .panel.active{display:block}
-.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
-.card h3{font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;border-bottom:2px solid #eaf3de;padding-bottom:5px}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:#fff;border-radius:12px;padding:16px;margin-bottom:13px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.card h3{font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.07em;margin-bottom:11px;border-bottom:2px solid #eaf3de;padding-bottom:5px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-@media(max-width:620px){.g2,.g3,.row2,.row3{grid-template-columns:1fr!important}}
-.stat{background:#eaf3de;border-radius:10px;padding:12px;text-align:center}
-.stat-val{font-size:22px;font-weight:700;color:#2d6a2d}
+@media(max-width:620px){.g2,.g3,.r2,.r3{grid-template-columns:1fr!important}}
+.stat{background:#eaf3de;border-radius:10px;padding:11px;text-align:center}
+.stat-val{font-size:21px;font-weight:700;color:#2d6a2d}
 .stat-lbl{font-size:11px;color:#555;margin-top:2px}
-/* IMAGEN CON IA */
-.ai-img-wrap{border-radius:10px;overflow:hidden;border:.5px solid #d8d8d8;margin-bottom:0;background:#1a3a1a;position:relative;min-height:220px}
-.ai-img-wrap img{width:100%;height:220px;object-fit:cover;display:block}
-.ai-img-wrap .loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:13px;gap:8px;background:#1a3a1a}
-.ai-img-wrap .loading .spinner{width:28px;height:28px;border:3px solid rgba(255,255,255,.3);border-top-color:#fcde5a;border-radius:50%;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.img-cap{padding:7px 12px;background:#2d6a2d;color:#fff;font-size:12px;font-weight:600}
-.img-sub{padding:5px 12px 9px;background:#eaf3de;color:#27500a;font-size:11px;line-height:1.5}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+/* BLOQUES MAPA */
+.bloque{border-radius:10px;overflow:hidden;border:.5px solid #ccc;margin-bottom:0;background:#e8f0e0}
+.bloque-titulo{background:#1a4a1a;color:#c0dd97;font-size:11px;font-weight:600;padding:5px 10px;letter-spacing:.05em;text-transform:uppercase}
+.mapa-wrap{position:relative}
+.mapa-wrap iframe{display:block}
+.bloque-cap{padding:7px 12px;background:#2d6a2d;color:#fff;font-size:12px;font-weight:600}
+.bloque-sub{padding:5px 12px 9px;background:#eaf3de;color:#27500a;font-size:11px;line-height:1.5}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px}
+.r3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:13px}
+/* NOTA MAPA */
+.mapa-nota{background:#fff9e6;border-left:3px solid #f0c040;border-radius:0 8px 8px 0;padding:9px 13px;font-size:12px;color:#7a5c00;margin-bottom:13px}
+/* RESTO */
 .tl{list-style:none}
-.tl li{display:flex;margin:0}
-.tl-yr{width:56px;text-align:right;padding-right:10px;font-size:11px;font-weight:700;color:#2d6a2d;padding-top:2px;flex-shrink:0}
+.tl li{display:flex}
+.tl-yr{width:54px;text-align:right;padding-right:10px;font-size:11px;font-weight:700;color:#2d6a2d;padding-top:2px;flex-shrink:0}
 .tl-mid{display:flex;flex-direction:column;align-items:center;width:18px;flex-shrink:0}
 .tl-dot{width:12px;height:12px;border-radius:50%;background:#3b6d11;flex-shrink:0;border:2px solid #fff;box-shadow:0 0 0 2px #3b6d11}
 .tl-dot.red{background:#c0392b;box-shadow:0 0 0 2px #c0392b}
 .tl-dot.big{width:15px;height:15px}
 .tl-seg{flex:1;width:2px;background:#c0dd97;margin:2px 0}
-.tl-body{flex:1;padding:0 0 16px 12px;font-size:13px;line-height:1.6}
+.tl-body{flex:1;padding:0 0 15px 12px;font-size:13px;line-height:1.6}
 .tl-tag{display:inline-block;background:#c0392b;color:#fff;font-size:10px;font-weight:700;border-radius:4px;padding:1px 6px;margin-bottom:4px}
-.hl{background:#eaf3de;border-left:4px solid #2d6a2d;border-radius:0 8px 8px 0;padding:10px 14px;font-size:13px;color:#1a4a1a;margin:10px 0;line-height:1.6}
+.hl{background:#eaf3de;border-left:4px solid #2d6a2d;border-radius:0 8px 8px 0;padding:10px 13px;font-size:13px;color:#1a4a1a;margin:10px 0;line-height:1.6}
 .hl.red{background:#fdecea;border-color:#c0392b;color:#7b241c}
 .hl.amber{background:#faeeda;border-color:#ba7517;color:#633806}
 .hl.blue{background:#e6f1fb;border-color:#185fa5;color:#0c447c}
 .badge{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin:2px;background:#eaf3de;color:#27500a}
 .fila{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0f0f0;font-size:13px}
 .fila:last-child{border-bottom:none}
-.fila-k{min-width:155px;color:#666;font-weight:500;flex-shrink:0}
-.lugar{background:#f8faf4;border-radius:8px;padding:11px 13px;margin:7px 0;border-left:3px solid #3b6d11}
+.fila-k{min-width:150px;color:#666;font-weight:500;flex-shrink:0}
+.lugar{background:#f8faf4;border-radius:8px;padding:10px 13px;margin:6px 0;border-left:3px solid #3b6d11}
 .lugar-n{font-weight:600;font-size:13px;color:#1a4a1a;margin-bottom:3px}
 .lugar-d{font-size:12px;color:#555;line-height:1.5}
-.sym-item{padding:9px 0;border-bottom:1px solid #f0f0f0}
+.sym-item{padding:8px 0;border-bottom:1px solid #f0f0f0}
 .sym-item:last-child{border-bottom:none}
-.sym-n{font-weight:600;color:#2d6a2d;font-size:13px;margin-bottom:3px}
+.sym-n{font-weight:600;color:#2d6a2d;font-size:13px;margin-bottom:2px}
 .sym-d{font-size:12px;color:#555;line-height:1.5}
 .econ-item{margin:7px 0}
 .econ-lbl{font-size:12px;color:#444;margin-bottom:3px}
 .econ-bg{background:#eaf3de;border-radius:6px;height:9px;overflow:hidden}
 .econ-bar{height:100%;border-radius:6px;background:#2d6a2d}
+/* Escudo y bandera SVG inline */
+.simbolo-wrap{background:#f8f8f0;border-radius:10px;border:.5px solid #ddd;overflow:hidden;text-align:center;padding:20px}
 footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:14px;font-size:11px;margin-top:16px;line-height:1.7}
 </style>
 </head>
@@ -92,40 +96,31 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
   <button onclick="show('datos',this)">Datos</button>
 </div>
 
-<!-- GEO -->
+<!-- ══════ GEOGRAFÍA ══════ -->
 <div id="geo" class="panel active">
-  <div class="g3" style="margin-bottom:14px">
+  <div class="g3" style="margin-bottom:13px">
     <div class="stat"><div class="stat-val">243 km²</div><div class="stat-lbl">Extensión total</div></div>
     <div class="stat"><div class="stat-val">2.175 m</div><div class="stat-lbl">Altitud s.n.m.</div></div>
     <div class="stat"><div class="stat-val">16 °C</div><div class="stat-lbl">Temperatura promedio</div></div>
   </div>
-  <div class="row2">
-    <div class="ai-img-wrap" id="w-panoramica">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Paisaje zona rural — El Retiro</div>
-      <div class="img-sub">Altiplano del Oriente antioqueño a 2.175 m s.n.m.</div>
-    </div>
-    <div class="ai-img-wrap" id="w-represa">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Represa de La Fe</div>
-      <div class="img-sub">Reserva hídrica regional. Ecoturismo y recreación</div>
-    </div>
-  </div>
-  <div class="row2">
-    <div class="ai-img-wrap" id="w-mapa">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Ubicación en Antioquia</div>
-      <div class="img-sub">El Retiro en la subregión Oriente</div>
-    </div>
-    <div class="ai-img-wrap" id="w-oriente">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Oriente Antioqueño</div>
-      <div class="img-sub">Montañas y valles del altiplano</div>
-    </div>
+  <div class="mapa-nota">🗺 Los mapas muestran la ubicación real de cada lugar en El Retiro, Antioquia. Puedes hacer zoom y explorar.</div>
+  <div class="r2">
+    <div class="bloque">
+  <div class="bloque-titulo">Vista municipal</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5075%2C6.0482%2C-75.49549999999999%2C6.0578&layer=mapnik&marker=6.053%2C-75.5015" width="100%" height="230" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Cabecera municipal de El Retiro</div>
+  <div class="bloque-sub">Centro urbano a 2.175 m s.n.m. en el Oriente antioqueño</div>
+</div>
+    <div class="bloque">
+  <div class="bloque-titulo">Represa de La Fe</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5012%2C6.070399999999999%2C-75.4892%2C6.08&layer=mapnik&marker=6.0752%2C-75.4952" width="100%" height="230" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Represa de La Fe</div>
+  <div class="bloque-sub">Principal reserva hídrica del Oriente. Ecoturismo y recreación</div>
+</div>
   </div>
   <div class="card">
     <h3>Ubicación y límites</h3>
-    <p style="font-size:13px;line-height:1.7;margin-bottom:12px">Municipio de la <strong>subregión Oriente</strong> de Antioquia, en el altiplano de la Cordillera Central de los Andes. A <strong>28 km de Medellín</strong> (~33 min vía Las Palmas). Territorio quebrado con montañas, cañadas y reservas naturales.</p>
+    <p style="font-size:13px;line-height:1.7;margin-bottom:12px">Municipio de la <strong>subregión Oriente</strong> de Antioquia, altiplano de la Cordillera Central. A <strong>28 km de Medellín</strong> (~33 min vía Las Palmas). Territorio quebrado con montañas, cañadas y reservas naturales.</p>
     <div class="g2">
       <div>
         <div class="fila"><span class="fila-k">Norte:</span><span>Envigado y Rionegro</span></div>
@@ -152,51 +147,83 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
       <span class="badge">Pantalio</span><span class="badge">Pantanillo</span><span class="badge">Puente Peláez</span>
       <span class="badge">Santa Elena</span><span class="badge">Tabacal</span>
     </div>
-    <div class="hl" style="margin-top:12px">El nombre <strong>El Guarzo</strong> proviene de las minas de cuarzo de la zona. La palabra evolucionó en el habla campesina generando el gentilicio <strong>guarceño</strong>.</div>
+    <div class="hl" style="margin-top:12px"><strong>El Guarzo</strong> era el nombre original del poblado (1790), por las minas de cuarzo de la zona. De ahí viene el gentilicio <strong>guarceño</strong>.</div>
   </div>
 </div>
 
-<!-- HISTORIA -->
+<!-- ══════ HISTORIA ══════ -->
 <div id="historia" class="panel">
-  <div class="row2">
-    <div class="ai-img-wrap" id="w-javiera">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Centro Cultural Javiera Londoño</div>
-      <div class="img-sub">Estatua en bronce del escultor Giuseppe Agelao — primera en liberar esclavos en América (1766)</div>
-    </div>
-    <div class="ai-img-wrap" id="w-iglesia">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Iglesia Nuestra Señora del Rosario — fundada 1814</div>
-      <div class="img-sub">Estilo barroco tardío y neoclásico. Patrimonio arquitectónico de Antioquia</div>
-    </div>
+  <div class="r2">
+    <div class="bloque">
+  <div class="bloque-titulo">Centro Cultural Javiera Londoño</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.507%2C6.048699999999999%2C-75.495%2C6.0583&layer=mapnik&marker=6.0535%2C-75.501" width="100%" height="230" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Centro Cultural Javiera Londoño</div>
+  <div class="bloque-sub">Aquí se encuentra la estatua en bronce del escultor Giuseppe Agelao. Primera en liberar esclavos en América (1766)</div>
+</div>
+    <div class="bloque">
+  <div class="bloque-titulo">Iglesia Nuestra Señora del Rosario</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5075%2C6.0489%2C-75.49549999999999%2C6.0585&layer=mapnik&marker=6.0537%2C-75.5015" width="100%" height="230" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Iglesia Nuestra Señora del Rosario — fundada 1814</div>
+  <div class="bloque-sub">Mezcla de estilos griego clásico y barroco tardío. Inaugurada el 1 de enero de 1850</div>
+</div>
   </div>
-  <div class="hl red"><strong>Hito mundial:</strong> El 11 de octubre de 1766, Javiera Londoño firmó el testamento liberando ~140 esclavos — <strong>primera liberación masiva en América y el mundo</strong>. Ocurrió 38 años antes que Haití (1804) y 85 años antes de la abolición en Colombia (1851).</div>
+  <div class="hl red"><strong>Hito mundial:</strong> El 11 de octubre de 1766, Javiera Londoño firmó el testamento liberando ~140 esclavos — <strong>primera liberación masiva en América y el mundo</strong>. 38 años antes que Haití (1804) y 85 años antes de la abolición en Colombia (1851).</div>
   <div class="card">
     <h3>Línea de tiempo histórica</h3>
     <ul class="tl">
-      <li><div class="tl-yr">s. XVII</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Ocupación indígena y conquista.</strong> Tahamíes y quiramas habitaban el territorio. Conquistadores vascos ocupan el altiplano.</div></li>
+      <li><div class="tl-yr">s. XVII</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Ocupación indígena y conquista.</strong> Tahamíes y quiramas habitaban el territorio. Conquistadores vascos llegan al altiplano.</div></li>
       <li><div class="tl-yr">1734</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Llegan Ignacio Castañeda y Javiera Londoño.</strong> Se establecen como terratenientes y mineros en El Guarzo.</div></li>
-      <li><div class="tl-yr">1766</div><div class="tl-mid"><div class="tl-dot red big"></div><div class="tl-seg"></div></div><div class="tl-body"><span class="tl-tag">HITO MUNDIAL · 11 oct</span><br><strong>Primera liberación masiva de esclavos en América.</strong> Javiera libera ~140 esclavos y les cede las minas. 38 años antes que Haití.</div></li>
-      <li><div class="tl-yr">1790</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Reconocido como vereda El Guarzo</strong> del municipio de Rionegro. Fundación oficial del poblado.</div></li>
+      <li><div class="tl-yr">1766</div><div class="tl-mid"><div class="tl-dot red big"></div><div class="tl-seg"></div></div><div class="tl-body"><span class="tl-tag">HITO MUNDIAL · 11 oct</span><br><strong>Primera liberación masiva de esclavos en América.</strong> Javiera libera ~140 esclavos y les cede las minas. Ocurre 38 años antes que Haití.</div></li>
+      <li><div class="tl-yr">1790</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Fundación del poblado El Guarzo</strong> como vereda de Rionegro.</div></li>
       <li><div class="tl-yr">15 oct<br>1814</div><div class="tl-mid"><div class="tl-dot big" style="background:#2d6a2d;box-shadow:0 0 0 2px #2d6a2d"></div><div class="tl-seg"></div></div><div class="tl-body"><strong style="color:#27500A">Erección oficial como municipio.</strong> El presbítero Lucio de Villa firma el decreto. Familias fundadoras: Mejía, Arcila, Montoya, Uribe, Vallejo, Henao.</div></li>
-      <li><div class="tl-yr">1920</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Nace la Banda de Música de El Retiro.</strong> Hoy supera los 100 años y es referente nacional.</div></li>
+      <li><div class="tl-yr">1920</div><div class="tl-mid"><div class="tl-dot"></div><div class="tl-seg"></div></div><div class="tl-body"><strong>Nace la Banda de Música de El Retiro.</strong> Hoy supera los 100 años. La Retreta del primer sábado de cada mes es tradición desde los años 60.</div></li>
       <li><div class="tl-yr">Hoy</div><div class="tl-mid"><div class="tl-dot big" style="background:#2d6a2d;box-shadow:0 0 0 2px #2d6a2d"></div></div><div class="tl-body"><strong style="color:#27500A">Destino turístico y polo de desarrollo.</strong> +115 talleres de muebles, aguacate Hass a Europa y Japón, gastronomía de autor y ecoturismo.</div></li>
     </ul>
   </div>
 </div>
 
-<!-- SÍMBOLOS -->
+<!-- ══════ SÍMBOLOS ══════ -->
 <div id="simbolos" class="panel">
-  <div class="row2" style="margin-bottom:14px">
-    <div class="ai-img-wrap" id="w-escudo" style="min-height:260px">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Escudo oficial de El Retiro</div>
-      <div class="img-sub">Cadenas rotas · Roble · Figura tahamí · Montañas · Río Pantanillo</div>
+  <div class="g2" style="margin-bottom:13px">
+    <div class="simbolo-wrap">
+      <svg viewBox="0 0 200 240" width="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Escudo El Retiro basado en descripción oficial -->
+        <path d="M20 20 L180 20 L180 160 Q100 220 20 160 Z" fill="#1565C0" stroke="#0D47A1" stroke-width="2"/>
+        <!-- Franja superior dorada -->
+        <path d="M20 20 L180 20 L180 75 L20 75 Z" fill="#F9A825"/>
+        <!-- Figura indígena (silueta) -->
+        <ellipse cx="70" cy="48" rx="10" ry="12" fill="#4E342E"/>
+        <path d="M60 60 Q70 80 80 60" fill="#4E342E"/>
+        <!-- Cadenas rotas -->
+        <path d="M115 35 Q125 30 130 40 Q125 50 115 45 Q110 40 115 35Z" fill="none" stroke="#fff" stroke-width="3"/>
+        <path d="M135 40 Q145 35 150 45 Q145 55 135 50 Q130 45 135 40Z" fill="none" stroke="#fff" stroke-width="3"/>
+        <line x1="130" y1="42" x2="134" y2="43" stroke="#fff" stroke-width="2"/>
+        <!-- Roble -->
+        <ellipse cx="100" cy="105" rx="28" ry="22" fill="#2E7D32"/>
+        <ellipse cx="85" cy="115" rx="18" ry="15" fill="#388E3C"/>
+        <ellipse cx="115" cy="112" rx="18" ry="15" fill="#388E3C"/>
+        <rect x="97" y="125" width="6" height="25" fill="#5D4037"/>
+        <!-- Montañas -->
+        <polygon points="30,155 65,105 100,140 135,100 170,145 170,160 30,160" fill="#1B5E20" opacity=".8"/>
+        <!-- Ondas de agua -->
+        <path d="M25 165 Q60 158 95 165 Q130 172 165 165" stroke="#90CAF9" stroke-width="3" fill="none"/>
+        <path d="M25 172 Q60 165 95 172 Q130 179 165 172" stroke="#90CAF9" stroke-width="2" fill="none"/>
+      </svg>
+      <div style="font-size:12px;font-weight:600;color:#2d6a2d;margin-top:8px">Escudo oficial de El Retiro</div>
+      <div style="font-size:11px;color:#555;margin-top:3px">Cadenas rotas · Roble · Tahamí · Montañas · Río</div>
     </div>
-    <div class="ai-img-wrap" id="w-bandera" style="min-height:260px">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Bandera oficial del municipio</div>
-      <div class="img-sub">Blanco (paz) · Verde (esperanza) · Estrellas blancas (veredas)</div>
+    <div class="simbolo-wrap">
+      <svg viewBox="0 0 240 160" width="200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bandera: fondo blanco, triángulo verde en esquina inferior derecha -->
+        <rect width="240" height="160" fill="#FFFFFF" stroke="#ddd" stroke-width="1"/>
+        <polygon points="0,160 240,0 240,160" fill="#2D6A2D"/>
+        <!-- Estrellas blancas en el triángulo verde -->
+        <text x="175" y="130" font-size="18" fill="white" text-anchor="middle">★</text>
+        <text x="200" y="110" font-size="14" fill="white" text-anchor="middle">★</text>
+        <text x="155" y="148" font-size="14" fill="white" text-anchor="middle">★</text>
+      </svg>
+      <div style="font-size:12px;font-weight:600;color:#2d6a2d;margin-top:8px">Bandera oficial del municipio</div>
+      <div style="font-size:11px;color:#555;margin-top:3px">Blanco (paz) · Verde (esperanza) · Estrellas (veredas)</div>
     </div>
   </div>
   <div class="g2">
@@ -204,43 +231,47 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
       <h3>Significado del escudo</h3>
       <div class="sym-item"><div class="sym-n">Cadenas rotas</div><div class="sym-d">La pieza más representativa. Evoca la liberación de esclavos por Javiera Londoño — primera en el Nuevo Reino de Granada.</div></div>
       <div class="sym-item"><div class="sym-n">Figura indígena tahamí</div><div class="sym-d">Homenaje a los dueños originales del territorio antes de la conquista española.</div></div>
-      <div class="sym-item"><div class="sym-n">Roble</div><div class="sym-d">Simboliza la fortaleza del municipio y la belleza de sus paisajes.</div></div>
+      <div class="sym-item"><div class="sym-n">Roble</div><div class="sym-d">Fortaleza del municipio y belleza de sus paisajes naturales.</div></div>
       <div class="sym-item"><div class="sym-n">Cordón franciscano</div><div class="sym-d">Recuerdo de Fray Cansío Botero, primer párroco y capellán del Libertador Simón Bolívar.</div></div>
-      <div class="sym-item"><div class="sym-n">Tres picos y ondas de agua</div><div class="sym-d">Topografía del Oriente antioqueño, el río Pantanillo y la represa de La Fe.</div></div>
+      <div class="sym-item"><div class="sym-n">Montañas y ondas de agua</div><div class="sym-d">Topografía del Oriente antioqueño, el río Pantanillo y la represa de La Fe.</div></div>
     </div>
     <div class="card">
       <h3>Bandera y colores</h3>
       <div class="sym-item"><div class="sym-n">Fondo blanco</div><div class="sym-d">Paz y tranquilidad entre los habitantes.</div></div>
-      <div class="sym-item"><div class="sym-n">Triángulo verde</div><div class="sym-d">Esperanza y progreso. Representa los paisajes naturales.</div></div>
+      <div class="sym-item"><div class="sym-n">Triángulo verde</div><div class="sym-d">Esperanza, progreso y los paisajes naturales.</div></div>
       <div class="sym-item"><div class="sym-n">Estrellas blancas</div><div class="sym-d">Cada estrella representa una vereda del municipio.</div></div>
       <div class="hl" style="margin-top:12px">
         <strong>Colores oficiales:</strong><br>
         <span class="badge" style="background:#2d6a2d;color:#fff;margin-top:6px">Verde</span>
         <span class="badge" style="border:1px solid #ccc">Blanco</span>
-        <span class="badge" style="background:#fcde5a;color:#412402">Amarillo</span>
+        <span class="badge" style="background:#fcde5a;color:#412402">Amarillo</span><br>
+        <strong style="margin-top:6px;display:block">Gentilicio:</strong> Guarceño / Guarceña<br>
+        <strong>Apelativos:</strong> "Cuna de la Libertad" · "Capital del Mueble"
       </div>
     </div>
   </div>
 </div>
 
-<!-- ECONOMÍA -->
+<!-- ══════ ECONOMÍA ══════ -->
 <div id="economia" class="panel">
-  <div class="g3" style="margin-bottom:14px">
+  <div class="g3" style="margin-bottom:13px">
     <div class="stat"><div class="stat-val">+115</div><div class="stat-lbl">Talleres de muebles</div></div>
     <div class="stat"><div class="stat-val">250 ha</div><div class="stat-lbl">Aguacate Hass exportación</div></div>
     <div class="stat"><div class="stat-val">#4</div><div class="stat-lbl">Productor aguacate Colombia</div></div>
   </div>
-  <div class="row2">
-    <div class="ai-img-wrap" id="w-muebles">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Ebanistería artesanal de El Retiro</div>
-      <div class="img-sub">Tradición de más de 100 años. +115 talleres en el municipio</div>
-    </div>
-    <div class="ai-img-wrap" id="w-aguacate">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Cultivos de aguacate Hass</div>
-      <div class="img-sub">4.° productor de exportación en Colombia. Despachos a Europa y Japón</div>
-    </div>
+  <div class="r2">
+    <div class="bloque">
+  <div class="bloque-titulo">Corredor mueblero</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5065%2C6.0497%2C-75.4945%2C6.0593&layer=mapnik&marker=6.0545%2C-75.5005" width="100%" height="220" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Corredor ebanistero de El Retiro</div>
+  <div class="bloque-sub">Más de 115 talleres artesanales. Tradición de 100+ años transmitida de generación en generación</div>
+</div>
+    <div class="bloque">
+  <div class="bloque-titulo">Zona agrícola — Aguacate Hass</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.516%2C6.0352%2C-75.504%2C6.0448&layer=mapnik&marker=6.04%2C-75.51" width="100%" height="220" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Cultivos de aguacate Hass</div>
+  <div class="bloque-sub">4.° productor de exportación en Colombia. Despachos a Europa y Japón desde vereda Don Diego</div>
+</div>
   </div>
   <div class="card">
     <h3>Sectores económicos</h3>
@@ -249,77 +280,91 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
     <div class="econ-item"><div class="econ-lbl">Agricultura (aguacate, mora, tomate, café especial)</div><div class="econ-bg"><div class="econ-bar" style="width:48%;background:#97c459"></div></div></div>
     <div class="econ-item"><div class="econ-lbl">Turismo gastronómico y rural</div><div class="econ-bg"><div class="econ-bar" style="width:38%;background:#c0dd97"></div></div></div>
     <div class="econ-item"><div class="econ-lbl">Floricultura, avicultura, piscicultura</div><div class="econ-bg"><div class="econ-bar" style="width:24%;background:#eaf3de;border:1px solid #c0dd97"></div></div></div>
-    <div class="hl amber" style="margin-top:12px">El <strong>Festival AMOblar</strong> (agosto-septiembre) reúne los principales ebanistas. En 2025 se realizó del 30 de agosto al 5 de septiembre.</div>
+    <div class="hl amber" style="margin-top:12px">El <strong>Festival AMOblar</strong> (agosto-septiembre anual) reúne los principales ebanistas en el corredor vial. En 2025 se realizó del 30 de agosto al 5 de septiembre.</div>
   </div>
 </div>
 
-<!-- CULTURA -->
+<!-- ══════ CULTURA ══════ -->
 <div id="cultura" class="panel">
-  <div class="row2">
-    <div class="ai-img-wrap" id="w-fiestas">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Fiestas de los Negritos (26-30 de diciembre)</div>
-      <div class="img-sub">Las más populosas de Antioquia. Tradición desde 1767 por testamento de Javiera Londoño</div>
-    </div>
-    <div class="ai-img-wrap" id="w-banda">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Banda Sinfónica de El Retiro</div>
-      <div class="img-sub">Fundada en 1920. Más de 100 años. La Retreta del primer sábado de cada mes</div>
-    </div>
+  <div class="r2">
+    <div class="bloque">
+  <div class="bloque-titulo">Parque principal — sede de la Retreta</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5073%2C6.0489%2C-75.4953%2C6.0585&layer=mapnik&marker=6.0537%2C-75.5013" width="100%" height="220" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Parque principal Santander</div>
+  <div class="bloque-sub">La Banda Sinfónica toca aquí el primer sábado de cada mes desde los años 60</div>
+</div>
+    <div class="bloque">
+  <div class="bloque-titulo">Cabecera municipal — Fiestas de los Negritos</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5075%2C6.0482%2C-75.49549999999999%2C6.0578&layer=mapnik&marker=6.053%2C-75.5015" width="100%" height="220" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Zona de celebración de las Fiestas de los Negritos</div>
+  <div class="bloque-sub">Las más populosas de Antioquia (26-30 dic.). Tradición desde 1767</div>
+</div>
   </div>
   <div class="card">
     <h3>Festividades del año</h3>
-    <div class="lugar" style="border-color:#c0392b"><div class="lugar-n" style="color:#c0392b">Fiestas de los Negritos (26-30 dic.)</div><div class="lugar-d">Las más populosas de Antioquia. Desde 1767, los descendientes de los esclavos liberados celebran una misa y fiesta en honor a Javiera Londoño. Orquestas, torneos deportivos, ruta de murales.</div></div>
-    <div class="lugar"><div class="lugar-n">Día de la Identidad Guarceña (15 sep.)</div><div class="lugar-d">Fecha del Concejo para afianzar las tradiciones y sentido de pertenencia guarceño.</div></div>
-    <div class="lugar" style="border-color:#ba7517"><div class="lugar-n" style="color:#ba7517">Festival AMOblar (ago-sep.)</div><div class="lugar-d">Feria anual de ebanistería a lo largo del corredor vial.</div></div>
-    <div class="lugar" style="border-color:#534ab7"><div class="lugar-n" style="color:#534ab7">Encuentro Nacional de Danzas Folclóricas (oct.)</div><div class="lugar-d">Certamen con casi 100 años de tradición dancística.</div></div>
-    <div class="lugar"><div class="lugar-n">Retreta — primer sábado de cada mes</div><div class="lugar-d">La Banda Sinfónica toca en el parque principal. Tradición ininterrumpida desde los años 60.</div></div>
-    <div class="lugar"><div class="lugar-n">Semana Santa en Vivo (mar-abr.)</div><div class="lugar-d">Representación teatral con versión infantil.</div></div>
+    <div class="lugar" style="border-color:#c0392b"><div class="lugar-n" style="color:#c0392b">Fiestas de los Negritos (26-30 dic.)</div><div class="lugar-d">Las más populosas de Antioquia. Desde 1767 los descendientes de los esclavos liberados celebran una misa y fiesta en honor a Javiera Londoño. Orquestas, torneos deportivos, ruta de murales.</div></div>
+    <div class="lugar"><div class="lugar-n">Día de la Identidad Guarceña (15 sep.)</div><div class="lugar-d">Fecha del Concejo para afianzar las tradiciones y el sentido de pertenencia guarceño.</div></div>
+    <div class="lugar" style="border-color:#ba7517"><div class="lugar-n" style="color:#ba7517">Festival AMOblar (ago-sep.)</div><div class="lugar-d">Feria anual de ebanistería a lo largo del corredor vial. En 2025: 30 ago al 5 sep.</div></div>
+    <div class="lugar" style="border-color:#534ab7"><div class="lugar-n" style="color:#534ab7">Encuentro Nacional de Danzas Folclóricas (oct.) · Dulzaina (jul.) · Duetos y Estudiantinas (ago.)</div><div class="lugar-d">El Retiro es pueblo musical por tradición. Su mezcla indígena, española y africana le dio identidad musical única.</div></div>
+    <div class="lugar"><div class="lugar-n">Retreta — primer sábado de cada mes</div><div class="lugar-d">La Banda Sinfónica (fundada 1920, 100+ años) toca en el parque principal. Tradición ininterrumpida desde los años 60.</div></div>
+    <div class="lugar"><div class="lugar-n">Semana Santa en Vivo (mar-abr.)</div><div class="lugar-d">Representación teatral con versión infantil que involucra a los niños del municipio.</div></div>
+  </div>
+  <div class="card">
+    <h3>Gastronomía</h3>
+    <div class="g2" style="font-size:13px;color:#444;line-height:1.7">
+      <div><strong style="color:#1a4a1a">Cocina paisa tradicional:</strong> Bandeja paisa, arepas, quesito, sancocho, chicharrón, mazamorra, truchas. Restaurantes icónicos: El Pensil de la Abuela (70 años), La Cantaleta, Sancho Paisa.</div>
+      <div><strong style="color:#1a4a1a">Cocina de autor:</strong> Katar Gastrobar (Mall La Fe) — chef Camilo Pat. También: peruana, española, brasilera, argentina. Café Guarceño y Café 100% El Retiro de productores locales.</div>
+    </div>
   </div>
 </div>
 
-<!-- TURISMO -->
+<!-- ══════ TURISMO ══════ -->
 <div id="turismo" class="panel">
-  <div class="row2">
-    <div class="ai-img-wrap" id="w-salto">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Salto del Tequendamita — Patrimonio turístico</div>
-      <div class="img-sub">A 7 km de la cabecera, vereda Don Diego, vía La Ceja</div>
-    </div>
-    <div class="ai-img-wrap" id="w-bosque">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Reserva Ecológica San Sebastián La Castellana</div>
-      <div class="img-sub">200 ha de bosque húmedo tropical entre El Retiro y Envigado</div>
-    </div>
+  <div class="r2">
+    <div class="bloque">
+  <div class="bloque-titulo">Salto del Tequendamita</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.482%2C6.0161999999999995%2C-75.47%2C6.0258&layer=mapnik&marker=6.021%2C-75.476" width="100%" height="220" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Salto del Tequendamita — Patrimonio turístico de Antioquia</div>
+  <div class="bloque-sub">A 7 km de la cabecera municipal, vereda Don Diego, vía La Ceja</div>
+</div>
+    <div class="bloque">
+  <div class="bloque-titulo">Reserva San Sebastián La Castellana</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.529%2C6.1053999999999995%2C-75.517%2C6.115&layer=mapnik&marker=6.1102%2C-75.523" width="100%" height="220" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Reserva Ecológica San Sebastián La Castellana</div>
+  <div class="bloque-sub">200 ha de bosque húmedo tropical entre El Retiro y Envigado. Senderismo y avistamiento de aves</div>
+</div>
   </div>
-  <div class="row2">
-    <div class="ai-img-wrap" id="w-parque">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Parque principal Santander</div>
-      <div class="img-sub">Patrimonio arquitectónico de Antioquia. Centro histórico colonial</div>
-    </div>
-    <div class="ai-img-wrap" id="w-panoramica2">
-      <div class="loading"><div class="spinner"></div>Generando imagen…</div>
-      <div class="img-cap">Paisaje rural de El Retiro</div>
-      <div class="img-sub">Altiplano andino a 2.175 m s.n.m.</div>
-    </div>
+  <div class="r2">
+    <div class="bloque">
+  <div class="bloque-titulo">Parque principal y centro histórico</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5073%2C6.0489%2C-75.4953%2C6.0585&layer=mapnik&marker=6.0537%2C-75.5013" width="100%" height="200" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Parque principal Santander</div>
+  <div class="bloque-sub">Patrimonio arquitectónico de Antioquia. Iglesia Nuestra Señora del Rosario (1814)</div>
+</div>
+    <div class="bloque">
+  <div class="bloque-titulo">Represa de La Fe — Parque Los Salados</div>
+  <div class="mapa-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5012%2C6.070399999999999%2C-75.4892%2C6.08&layer=mapnik&marker=6.0752%2C-75.4952" width="100%" height="200" style="border:0;display:block" loading="lazy"></iframe></div>
+  <div class="bloque-cap">Parque Ecológico Los Salados</div>
+  <div class="bloque-sub">Canopy, paintball, senderismo, paseos en bote. Mall La Fe con gastronomía de autor</div>
+</div>
   </div>
   <div class="card">
     <h3>Atractivos turísticos</h3>
-    <div class="lugar"><div class="lugar-n">Salto del Tequendamita</div><div class="lugar-d">Cascada patrimonio turístico de Antioquia a 7 km de la cabecera.</div></div>
-    <div class="lugar"><div class="lugar-n">Represa de La Fe — Parque Los Salados</div><div class="lugar-d">Canopy, paintball, senderismo y paseos en bote. Mall La Fe con gastronomía de autor.</div></div>
-    <div class="lugar"><div class="lugar-n">Parque principal Santander y cabecera</div><div class="lugar-d">Patrimonio arquitectónico de Antioquia. Iglesia Nuestra Señora del Rosario.</div></div>
-    <div class="lugar"><div class="lugar-n">Centro Cultural Javiera Londoño</div><div class="lugar-d">Estatua de bronce de Javiera (Giuseppe Agelao) cortando cadenas.</div></div>
-    <div class="lugar"><div class="lugar-n">Reserva Ecológica San Sebastián La Castellana</div><div class="lugar-d">200 ha de bosque húmedo tropical. Senderismo y avistamiento de aves.</div></div>
+    <div class="lugar"><div class="lugar-n">Salto del Tequendamita</div><div class="lugar-d">Cascada patrimonio turístico de Antioquia a 7 km por la vía a La Ceja.</div></div>
+    <div class="lugar"><div class="lugar-n">Represa de La Fe — Parque Los Salados</div><div class="lugar-d">Canopy, paintball, senderismo y paseos en bote. Mall La Fe con Katar Gastrobar.</div></div>
+    <div class="lugar"><div class="lugar-n">Parque principal Santander y cabecera</div><div class="lugar-d">Patrimonio arquitectónico. Iglesia Nuestra Señora del Rosario, casa de gobierno, tiendas artesanales.</div></div>
+    <div class="lugar"><div class="lugar-n">Centro Cultural Javiera Londoño</div><div class="lugar-d">Estatua de bronce (Giuseppe Agelao) de Javiera cortando cadenas. Historia de la primera liberación de esclavos en América.</div></div>
+    <div class="lugar"><div class="lugar-n">Reserva Ecológica San Sebastián La Castellana</div><div class="lugar-d">200 ha bosque húmedo tropical entre El Retiro y Envigado. +150 especies de flora y fauna.</div></div>
     <div class="lugar"><div class="lugar-n">Corredor mueblero (+115 talleres)</div><div class="lugar-d">Visitar los talleres artesanales y conocer la tradición centenaria guarceña.</div></div>
-    <div class="lugar"><div class="lugar-n">Ruta de los murales</div><div class="lugar-d">Arte urbano en las calles de la cabecera que cuenta la historia del municipio.</div></div>
-    <div class="hl blue" style="margin-top:10px"><strong>Internacional:</strong> El <em>Lycée Français de Medellín</em> tiene su campus en la vereda Carrizales (km 10).</div>
+    <div class="lugar"><div class="lugar-n">Ruta de los murales</div><div class="lugar-d">Arte urbano en las calles de la cabecera que cuenta la historia e identidad del municipio.</div></div>
+    <div class="lugar"><div class="lugar-n">Caminos veredales y cascadas</div><div class="lugar-d">Cascadas en Nazareth, La Honda, El Carmen y Normandía. Senderos precolombinos.</div></div>
+    <div class="hl blue" style="margin-top:10px"><strong>Internacional:</strong> El <em>Lycée Français de Medellín</em> tiene su campus en la vereda Carrizales (km 10). El municipio tiene 2 operadores turísticos y 4 guías certificados.</div>
   </div>
 </div>
 
-<!-- DATOS -->
+<!-- ══════ DATOS ══════ -->
 <div id="datos" class="panel">
-  <div class="g3" style="margin-bottom:14px">
+  <div class="g3" style="margin-bottom:13px">
     <div class="stat"><div class="stat-val">23.514</div><div class="stat-lbl">Censo DANE 2018</div></div>
     <div class="stat"><div class="stat-val">~25.500</div><div class="stat-lbl">Estimado actual</div></div>
     <div class="stat"><div class="stat-val">93,1%</div><div class="stat-lbl">Alfabetismo</div></div>
@@ -361,124 +406,16 @@ footer{background:#1a4a1a;color:rgba(255,255,255,.6);text-align:center;padding:1
 </div>
 
 <footer>
-  Información verificada · Fuentes: Alcaldía de El Retiro · DANE Censo 2018 · Wikipedia · Antioquia es Mágica · Comfenalco Antioquia<br>
-  Imágenes generadas con IA · Colegio Loyola para la Ciencia y la Innovación — Medellín, 2025
+  Información verificada · Fuentes: Alcaldía de El Retiro (elretiro.gov.co) · DANE Censo 2018 · Wikipedia · Antioquia es Mágica<br>
+  Mapas: OpenStreetMap contributors (CC BY-SA) · Colegio Loyola para la Ciencia y la Innovación — Medellín, 2025
 </footer>
 
 <script>
-const API_KEY = "PLACEHOLDER_KEY";
-
-const IMAGENES = {
-  "panoramica":  "Aerial view of El Retiro Antioquia Colombia, green mountains, misty valley, colonial town, Andean landscape, lush vegetation, photorealistic",
-  "represa":     "La Fe reservoir dam El Retiro Antioquia Colombia, calm blue water surrounded by green mountains, forest, afternoon light, photorealistic",
-  "mapa":        "Simple map of Antioquia department Colombia highlighting El Retiro municipality in the eastern region, clean cartographic style",
-  "oriente":     "Eastern Antioquia Colombia landscape, coffee region green hills, farms, morning mist, rural Colombia, photorealistic",
-  "javiera":     "Bronze statue of a woman breaking chains, colonial architecture background, museum courtyard El Retiro Colombia, sculpture art",
-  "iglesia":     "White colonial baroque church Nuestra Senora del Rosario El Retiro Antioquia Colombia, blue sky, main square, photorealistic",
-  "escudo":      "Coat of arms El Retiro Antioquia Colombia, broken chains, oak tree, indigenous figure, mountains, heraldic design on white",
-  "bandera":     "Flag El Retiro Antioquia Colombia, white background with green triangle and white stars, waving flag, photorealistic",
-  "muebles":     "Traditional Colombian woodworking workshop, skilled artisan crafting wooden furniture, sawdust, tools, warm lighting, El Retiro Antioquia",
-  "aguacate":    "Hass avocado plantation Colombia, rows of avocado trees on green hillside, Andean mountains background, harvest season",
-  "fiestas":     "Traditional Colombian festival night celebration, colorful lights, people dancing, church square illuminated, Antioquia Colombia",
-  "banda":       "Traditional Colombian municipal band playing in town square, musicians in uniform, colonial church background, Antioquia",
-  "salto":       "Tequendamita waterfall El Retiro Antioquia Colombia, tropical forest, clear water cascade, green vegetation, photorealistic",
-  "bosque":      "San Sebastian La Castellana ecological reserve El Retiro Colombia, dense tropical rainforest, hiking trail, birds, photorealistic",
-  "parque":      "Parque Santander El Retiro Antioquia Colombia, colonial town square, white church, colorful buildings, afternoon light",
-  "panoramica2": "El Retiro Antioquia Colombia countryside, green rolling hills, traditional Colombian village, misty mountains, photorealistic"
-};
-
-const ORDEN = [
-  ["panoramica","represa","mapa","oriente"],
-  ["javiera","iglesia"],
-  ["escudo","bandera"],
-  ["muebles","aguacate"],
-  ["fiestas","banda"],
-  ["salto","bosque","parque","panoramica2"]
-];
-
-async function generarImagen(id, prompt) {
-  const wrap = document.getElementById("w-" + id);
-  if (!wrap) return;
-  try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": API_KEY,
-        "anthropic-version": "2023-06-01"
-      },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-6",
-        max_tokens: 1024,
-        messages: [{
-          role: "user",
-          content: `Generate a detailed, realistic image description for this scene that I can use as alt text. Scene: ${prompt}. Respond with only a brief 1-sentence visual description.`
-        }]
-      })
-    });
-    // Si la API no genera imágenes, usar imagen de búsqueda de Google
-    const query = encodeURIComponent(prompt.split(",").slice(0,3).join(" "));
-    const imgUrl = `https://source.unsplash.com/800x500/?${encodeURIComponent(id === "muebles" ? "woodworking,furniture,artisan" : id === "aguacate" ? "avocado,plantation,green" : id === "fiestas" ? "colombian,festival,celebration" : id === "salto" ? "waterfall,colombia,tropical" : id === "bosque" ? "tropical,forest,colombia" : id === "parque" ? "colonial,church,colombia,square" : id === "escudo" ? "heraldry,coat,arms" : id === "bandera" ? "colombia,flag,green,white" : id === "iglesia" ? "colonial,church,white,baroque" : id === "javiera" ? "bronze,statue,woman" : id === "banda" ? "band,music,colombia" : id === "represa" ? "reservoir,dam,colombia" : "colombia,antioquia,green,mountains")}`;
-    
-    const loading = wrap.querySelector(".loading");
-    const img = document.createElement("img");
-    img.style.cssText = "width:100%;height:220px;object-fit:cover;display:block";
-    img.alt = prompt;
-    img.crossOrigin = "anonymous";
-    img.referrerPolicy = "no-referrer";
-    img.src = imgUrl;
-    img.onload = () => { if(loading) loading.style.display = "none"; };
-    img.onerror = () => { if(loading) loading.innerHTML = "📷 " + id; };
-    wrap.insertBefore(img, wrap.querySelector(".img-cap"));
-  } catch(e) {
-    const loading = wrap.querySelector(".loading");
-    if(loading) loading.innerHTML = "📷 " + id;
-  }
-}
-
-// Cargar imágenes de Unsplash (no necesita API key, funciona libremente)
-window.addEventListener("load", () => {
-  const imgs = {
-    "panoramica":  "colombia,mountains,green,valley",
-    "represa":     "reservoir,lake,colombia,forest",
-    "mapa":        "colombia,map,antioquia",
-    "oriente":     "colombia,hills,green,farm",
-    "javiera":     "bronze,statue,museum,sculpture",
-    "iglesia":     "colonial,church,white,baroque,latin",
-    "escudo":      "shield,heraldry,colombia",
-    "bandera":     "flag,green,colombia",
-    "muebles":     "woodworking,furniture,artisan,workshop",
-    "aguacate":    "avocado,plantation,green,harvest",
-    "fiestas":     "festival,colombia,celebration,night",
-    "banda":       "brass,band,music,parade",
-    "salto":       "waterfall,tropical,colombia",
-    "bosque":      "tropical,forest,jungle,green",
-    "parque":      "town,square,colonial,church",
-    "panoramica2": "colombia,rural,landscape,mountains"
-  };
-  Object.entries(imgs).forEach(([id, tags]) => {
-    const wrap = document.getElementById("w-" + id);
-    if (!wrap) return;
-    const loading = wrap.querySelector(".loading");
-    const img = document.createElement("img");
-    img.style.cssText = "width:100%;height:220px;object-fit:cover;display:block";
-    img.alt = tags;
-    img.referrerPolicy = "no-referrer";
-    img.crossOrigin = "anonymous";
-    // Usar Picsum (imágenes aleatorias de alta calidad, siempre disponibles)
-    const seed = id.split("").reduce((a,c) => a + c.charCodeAt(0), 0);
-    img.src = `https://picsum.photos/seed/${seed}/800/500`;
-    img.onload = () => { if(loading) loading.style.display = "none"; };
-    img.onerror = () => { if(loading) loading.innerHTML = "📷 Imagen no disponible"; };
-    wrap.insertBefore(img, wrap.querySelector(".img-cap"));
-  });
-});
-
-function show(id,btn) {
-  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
-  document.querySelectorAll(".tab-bar button").forEach(b=>b.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-  btn.classList.add("active");
+function show(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-bar button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
   window.scrollTo(0,0);
 }
 </script>
