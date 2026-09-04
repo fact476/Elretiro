@@ -12,77 +12,52 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Diagnostico y descarga
+      - name: Test de conectividad y descarga
         run: |
           mkdir -p imgs
-          LOG="diagnostico.txt"
-          echo "=== Diagnostico $(date) ===" > $LOG
           
-          # Test de conectividad a distintas fuentes
-          echo "" >> $LOG
-          echo "--- Test de URLs ---" >> $LOG
+          echo "=== TEST DE CONECTIVIDAD $(date) ===" | tee diagnostico.txt
           
-          test_url() {
-            HTTP=$(curl -sL --max-time 15 -w "%{http_code}" -o /tmp/img_test.bin               -H "User-Agent: Mozilla/5.0" "$1" 2>/dev/null)
-            SIZE=$(wc -c < /tmp/img_test.bin 2>/dev/null || echo 0)
-            echo "HTTP:$HTTP SIZE:$SIZE URL:$1" | tee -a $LOG
-            rm -f /tmp/img_test.bin
+          check() {
+            HTTP=$(curl -sL --max-time 15 -w "%{http_code}" -o /tmp/t.bin -H "User-Agent: Mozilla/5.0" "$1")
+            SIZE=$(stat -c%s /tmp/t.bin 2>/dev/null || echo 0)
+            RESULT="HTTP:$HTTP SIZE:${SIZE}b | $1"
+            echo "$RESULT" | tee -a diagnostico.txt
           }
           
-          # Wikimedia directo
-          test_url "https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia.jpg"
-          test_url "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Parque_del_Retiro-Antioquia.jpg/640px-Parque_del_Retiro-Antioquia.jpg"
+          check "https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia.jpg"
+          check "https://picsum.photos/800/500.jpg"
+          check "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200"
+          check "https://cdn.pixabay.com/photo/2016/01/09/18/27/journey-1130732_640.jpg"
+          check "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&w=800"
+          check "https://source.unsplash.com/800x500/?colombia"
+          check "https://loremflickr.com/800/500/colombia"
+          check "https://placeimg.com/800/500/nature"
+          check "https://cataas.com/cat"
+          check "https://thispersondoesnotexist.com/"
+          check "https://placekitten.com/800/500"
+          check "https://baconmockup.com/800/500/"
+          check "https://random.imagecdn.app/800/500"
+          check "https://api.unsplash.com/photos/random?query=colombia&w=800"
           
-          # Archive.org (copia de Wikimedia)
-          test_url "https://archive.org/download/wiki-commons/w/images/6/61/Parque_del_Retiro-Antioquia.jpg"
+          echo "" | tee -a diagnostico.txt
+          echo "=== INTENTANDO DESCARGAR ===" | tee -a diagnostico.txt
           
-          # Otros servicios de imagen
-          test_url "https://picsum.photos/800/500"
-          test_url "https://source.unsplash.com/800x500/?colombia,mountains"
-          test_url "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
-          test_url "https://cdn.pixabay.com/photo/2016/01/09/18/27/journey-1130732_1280.jpg"
-          test_url "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?w=800"
-          test_url "https://media.gettyimages.com/photos/colombia-picture-id123456789"
-          test_url "https://elretiro.gov.co/sites/elretiro-antioquia.gov.co/files/2023-10/paisaje.jpg"
+          # Intentar descargar las que den 200
+          for url in             "https://picsum.photos/seed/retiro/800/500"             "https://loremflickr.com/800/500/colombia,mountains"             "https://random.imagecdn.app/800/500"; do
+            HTTP=$(curl -sL --max-time 15 -w "%{http_code}" -o imgs/test.jpg -H "User-Agent: Mozilla/5.0" "$url")
+            SIZE=$(stat -c%s imgs/test.jpg 2>/dev/null || echo 0)
+            echo "URL: $url -> HTTP:$HTTP SIZE:$SIZE" | tee -a diagnostico.txt
+            [ "$SIZE" -gt 10000 ] && echo "FUNCIONA: $url" | tee -a diagnostico.txt && break
+            rm -f imgs/test.jpg
+          done
           
-          echo "" >> $LOG
-          echo "--- Intentando descargar fotos reales ---" >> $LOG
-          
-          # Descargar las que funcionen
-          dl() {
-            local nombre="$1" url="$2"
-            HTTP=$(curl -sL --max-time 20 -w "%{http_code}"               -H "User-Agent: Mozilla/5.0"               -o "imgs/${nombre}" "${url}" 2>/dev/null)
-            SIZE=$(wc -c < "imgs/${nombre}" 2>/dev/null || echo 0)
-            if [ "$SIZE" -gt 10000 ]; then
-              echo "OK: $nombre (${SIZE}b HTTP:$HTTP)" | tee -a $LOG
-            else
-              echo "FALLO: $nombre (${SIZE}b HTTP:$HTTP)" | tee -a $LOG
-              rm -f "imgs/${nombre}"
-            fi
-          }
-          
-          # Wikimedia con diferentes User-Agents
-          curl -sL --max-time 20 -w "HTTP:%{http_code}
-"             -H "User-Agent: curl/7.88"             -H "Referer: https://es.wikipedia.org/"             -o "imgs/parque.jpg"             "https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia.jpg"
-          SIZE=$(wc -c < imgs/parque.jpg 2>/dev/null || echo 0)
-          echo "Wikimedia curl UA: ${SIZE} bytes" | tee -a $LOG
-          [ "$SIZE" -lt 10000 ] && rm -f imgs/parque.jpg
-          
-          # Picsum (fotos random pero carga siempre)
-          dl "test_picsum.jpg" "https://picsum.photos/800/500"
-          
-          echo "" >> $LOG
-          echo "--- Archivos en imgs/ ---" >> $LOG
-          ls -lh imgs/ 2>/dev/null | tee -a $LOG || echo "Vacio" | tee -a $LOG
-          
-          echo "" >> $LOG
-          echo "=== FIN DEL DIAGNOSTICO ===" >> $LOG
-          cat $LOG
+          ls -lh imgs/ | tee -a diagnostico.txt
+          cat diagnostico.txt
 
-      - name: Guardar resultados en repo
+      - name: Subir diagnostico al repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add diagnostico.txt imgs/ 2>/dev/null || true
-          git diff --staged --quiet || (git commit -m "Diagnostico de red y fotos disponibles" && git push)
-          echo "Listo - revisa diagnostico.txt en el repo"
+          git add diagnostico.txt imgs/
+          git diff --staged --quiet || (git commit -m "diagnostico red" && git push)
