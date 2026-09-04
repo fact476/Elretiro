@@ -1,0 +1,12 @@
+OK      22796b  https://picsum.photos/800/500
+OK     122811b  https://loremflickr.com/800/500/colombia
+OK      24032b  https://random.imagecdn.app/800/500
+FAIL          https://placekitten.com/800/500 [HTTP Error 521: <none>]
+OK      65873b  https://placebear.com/800/500
+OK     117630b  https://baconmockup.com/800/500/
+FAIL          https://via.placeholder.com/800x500 [<urlopen error [SSL: UNEXPECTED_EOF_WHIL]
+FAIL          https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia. [HTTP Error 404: Not Found]
+FAIL          https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Parque_del_Retiro-Anti [HTTP Error 400: Use thumbnail sizes list]
+OK      93370b  https://cdn.pixabay.com/photo/2016/01/09/18/27/journey-1130732_640.jpg
+FAIL          https://source.unsplash.com/800x500/?mountains,green [HTTP Error 503: Service Unavailable]
+OK      53686b  https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80
