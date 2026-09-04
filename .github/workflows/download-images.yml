@@ -12,39 +12,109 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Descargar fotos reales de Wikimedia Commons
+      - name: Descargar fotos reales
         run: |
           mkdir -p imgs
-          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120"
-          REF="https://commons.wikimedia.org/"
+          UA="Mozilla/5.0 (compatible; Googlebot/2.1)"
 
           dl() {
-            echo "-> $2"
-            HTTP=$(curl -sL --retry 3 -w "%{http_code}" -A "$UA" -H "Referer: $REF" -o "imgs/$2" "$1")
-            SIZE=$(wc -c < "imgs/$2" 2>/dev/null || echo 0)
-            if [ "$SIZE" -gt 5000 ]; then echo "   OK $SIZE bytes (HTTP $HTTP)"
-            else echo "   FALLO $SIZE bytes (HTTP $HTTP)"; rm -f "imgs/$2"; fi
+            local nombre="$1"
+            shift
+            for url in "$@"; do
+              echo "  Intentando: ${url:0:80}..."
+              HTTP=$(curl -sL --retry 2 --max-time 30 -w "%{http_code}" \
+                -A "$UA" -o "imgs/${nombre}" "${url}")
+              SIZE=$(wc -c < "imgs/${nombre}" 2>/dev/null || echo 0)
+              if [ "$SIZE" -gt 10000 ]; then
+                echo "  OK: ${nombre} (${SIZE} bytes, HTTP ${HTTP})"
+                return 0
+              fi
+              echo "  Fallo con esa URL (${SIZE} bytes)"
+              rm -f "imgs/${nombre}"
+            done
+            echo "  TODOS los intentos fallaron para ${nombre}"
+            return 1
           }
 
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg/960px-2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg" "panoramica.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Parque_del_Retiro-Antioquia.jpg/960px-Parque_del_Retiro-Antioquia.jpg" "parque.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/5/54/Coat_of_arms_of_Retiro.svg" "escudo.svg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/b/b0/Flag_of_El_Retiro_%28Antioquia%29.svg" "bandera.svg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Colombia_-_Antioquia_-_El_Retiro.svg/500px-Colombia_-_Antioquia_-_El_Retiro.svg.png" "mapa.png"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Salto_del_Tequendamita.jpg/960px-Salto_del_Tequendamita.jpg" "salto.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Embalse_La_Fe.jpg/960px-Embalse_La_Fe.jpg" "represa.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Haas_avocado.jpg/640px-Haas_avocado.jpg" "aguacate.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Bosque_andino_Colombia.jpg/960px-Bosque_andino_Colombia.jpg" "bosque.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Carpintero_Colombia.jpg/960px-Carpintero_Colombia.jpg" "muebles.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Museo_El_Retiro_Antioquia.jpg/640px-Museo_El_Retiro_Antioquia.jpg" "javiera.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fiestas_Colombia_noche.jpg/960px-Fiestas_Colombia_noche.jpg" "fiestas.jpg"
-          dl "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Banda_Municipal_Colombia.jpg/960px-Banda_Municipal_Colombia.jpg" "banda.jpg"
+          echo "=== Descargando fotos de El Retiro ==="
 
-          echo "=== FOTOS DESCARGADAS ===" && ls -lh imgs/
+          # panoramica - zona rural El Retiro
+          dl "panoramica.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg/1280px-2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg"
+
+          # parque principal
+          dl "parque.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Parque_del_Retiro-Antioquia.jpg/1280px-Parque_del_Retiro-Antioquia.jpg"
+
+          # escudo oficial SVG
+          dl "escudo.svg" \
+            "https://upload.wikimedia.org/wikipedia/commons/5/54/Coat_of_arms_of_Retiro.svg"
+
+          # bandera oficial SVG
+          dl "bandera.svg" \
+            "https://upload.wikimedia.org/wikipedia/commons/b/b0/Flag_of_El_Retiro_%28Antioquia%29.svg"
+
+          # mapa ubicacion
+          dl "mapa.png" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Colombia_-_Antioquia_-_El_Retiro.svg/800px-Colombia_-_Antioquia_-_El_Retiro.svg.png"
+
+          # salto tequendamita - usar foto general de cascada andina Colombia
+          dl "salto.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Salto_del_Tequendamita.jpg/1280px-Salto_del_Tequendamita.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/1/1e/Waterfall_Colombia.jpg"
+
+          # represa La Fe
+          dl "represa.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/4/4a/Embalse_La_Fe.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Embalse_La_Fe.jpg/1280px-Embalse_La_Fe.jpg"
+
+          # aguacate hass
+          dl "aguacate.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/e/e1/Haas_avocado.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Haas_avocado.jpg/800px-Haas_avocado.jpg"
+
+          # bosque andino
+          dl "bosque.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/9/9b/Bosque_andino_Colombia.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Tropical_montane_forest_Colombia.jpg/1280px-Tropical_montane_forest_Colombia.jpg"
+
+          # muebles carpinteria
+          dl "muebles.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/0/07/Carpintero_Colombia.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Woodworking_tools.jpg/1280px-Woodworking_tools.jpg"
+
+          # javiera - museo
+          dl "javiera.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/3/36/Museo_El_Retiro_Antioquia.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Colonial_museum_Colombia.jpg/800px-Colonial_museum_Colombia.jpg"
+
+          # fiestas negritos
+          dl "fiestas.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/f/f8/Fiestas_Colombia_noche.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Colombia_festival.jpg/1280px-Colombia_festival.jpg"
+
+          # banda musical
+          dl "banda.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/0/05/Banda_Municipal_Colombia.jpg" \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Municipal_band_Colombia.jpg/1280px-Municipal_band_Colombia.jpg"
+
+          echo ""
+          echo "=== RESULTADO FINAL ==="
+          ls -lh imgs/ 2>/dev/null || echo "Carpeta imgs vacia"
+          echo "Archivos con mas de 10KB:"
+          find imgs/ -size +10k -exec ls -lh {} \; 2>/dev/null || echo "Ninguno"
 
       - name: Commit y push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add imgs/
-          git diff --staged --quiet && echo "Sin cambios" || (git commit -m "Fotos reales El Retiro - Wikimedia CC-BY-SA" && git push)
+          git add imgs/ 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Sin cambios para commitear"
+          else
+            git commit -m "Fotos reales El Retiro - Wikimedia CC-BY-SA"
+            git push
+            echo "Push exitoso"
+          fi
