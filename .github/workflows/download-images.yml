@@ -12,52 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Test de conectividad y descarga
-        run: |
-          mkdir -p imgs
-          
-          echo "=== TEST DE CONECTIVIDAD $(date) ===" | tee diagnostico.txt
-          
-          check() {
-            HTTP=$(curl -sL --max-time 15 -w "%{http_code}" -o /tmp/t.bin -H "User-Agent: Mozilla/5.0" "$1")
-            SIZE=$(stat -c%s /tmp/t.bin 2>/dev/null || echo 0)
-            RESULT="HTTP:$HTTP SIZE:${SIZE}b | $1"
-            echo "$RESULT" | tee -a diagnostico.txt
-          }
-          
-          check "https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia.jpg"
-          check "https://picsum.photos/800/500.jpg"
-          check "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200"
-          check "https://cdn.pixabay.com/photo/2016/01/09/18/27/journey-1130732_640.jpg"
-          check "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&w=800"
-          check "https://source.unsplash.com/800x500/?colombia"
-          check "https://loremflickr.com/800/500/colombia"
-          check "https://placeimg.com/800/500/nature"
-          check "https://cataas.com/cat"
-          check "https://thispersondoesnotexist.com/"
-          check "https://placekitten.com/800/500"
-          check "https://baconmockup.com/800/500/"
-          check "https://random.imagecdn.app/800/500"
-          check "https://api.unsplash.com/photos/random?query=colombia&w=800"
-          
-          echo "" | tee -a diagnostico.txt
-          echo "=== INTENTANDO DESCARGAR ===" | tee -a diagnostico.txt
-          
-          # Intentar descargar las que den 200
-          for url in             "https://picsum.photos/seed/retiro/800/500"             "https://loremflickr.com/800/500/colombia,mountains"             "https://random.imagecdn.app/800/500"; do
-            HTTP=$(curl -sL --max-time 15 -w "%{http_code}" -o imgs/test.jpg -H "User-Agent: Mozilla/5.0" "$url")
-            SIZE=$(stat -c%s imgs/test.jpg 2>/dev/null || echo 0)
-            echo "URL: $url -> HTTP:$HTTP SIZE:$SIZE" | tee -a diagnostico.txt
-            [ "$SIZE" -gt 10000 ] && echo "FUNCIONA: $url" | tee -a diagnostico.txt && break
-            rm -f imgs/test.jpg
-          done
-          
-          ls -lh imgs/ | tee -a diagnostico.txt
-          cat diagnostico.txt
+      - name: Descargar con Python
+        run: python3 descarga.py
 
-      - name: Subir diagnostico al repo
+      - name: Subir al repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add diagnostico.txt imgs/
-          git diff --staged --quiet || (git commit -m "diagnostico red" && git push)
+          git add imgs/ diagnostico.txt
+          git diff --staged --quiet || (git commit -m "Fotos reales El Retiro" && git push)
