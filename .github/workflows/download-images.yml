@@ -14,96 +14,71 @@ jobs:
 
       - name: Descargar fotos con Python
         run: |
-          python3 << 'PYEOF'
-          import urllib.request, os, time
+          python3 - << 'PYEOF'
+import urllib.request, os, time
 
-          os.makedirs("imgs", exist_ok=True)
+os.makedirs("imgs", exist_ok=True)
 
-          UA  = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
-          REF = "https://commons.wikimedia.org/"
+UA  = "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+REF = "https://commons.wikimedia.org/"
 
-          fotos = [
-            ("panoramica.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg/1280px-2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg",
-            ]),
-            ("parque.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia.jpg",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Parque_del_Retiro-Antioquia.jpg/1280px-Parque_del_Retiro-Antioquia.jpg",
-            ]),
-            ("escudo.svg", [
-              "https://upload.wikimedia.org/wikipedia/commons/5/54/Coat_of_arms_of_Retiro.svg",
-            ]),
-            ("bandera.svg", [
-              "https://upload.wikimedia.org/wikipedia/commons/b/b0/Flag_of_El_Retiro_%28Antioquia%29.svg",
-            ]),
-            ("mapa.png", [
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Colombia_-_Antioquia_-_El_Retiro.svg/800px-Colombia_-_Antioquia_-_El_Retiro.svg.png",
-            ]),
-            ("represa.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/4/4a/Embalse_La_Fe.jpg",
-            ]),
-            ("salto.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/8/8b/Salto_del_Tequendamita.jpg",
-            ]),
-            ("aguacate.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/e/e1/Haas_avocado.jpg",
-            ]),
-            ("bosque.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/9/9b/Bosque_andino_Colombia.jpg",
-            ]),
-            ("muebles.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/0/07/Carpintero_Colombia.jpg",
-            ]),
-            ("javiera.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/3/36/Museo_El_Retiro_Antioquia.jpg",
-            ]),
-            ("fiestas.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/f/f8/Fiestas_Colombia_noche.jpg",
-            ]),
-            ("banda.jpg", [
-              "https://upload.wikimedia.org/wikipedia/commons/0/05/Banda_Municipal_Colombia.jpg",
-            ]),
-          ]
+fotos = [
+  ("panoramica.jpg", "https://upload.wikimedia.org/wikipedia/commons/6/60/2018_zona_rural_del_municipio_de_El_Retiro_en_el_Oriente_Antioque%C3%B1o.jpg"),
+  ("parque.jpg",     "https://upload.wikimedia.org/wikipedia/commons/6/61/Parque_del_Retiro-Antioquia.jpg"),
+  ("escudo.svg",     "https://upload.wikimedia.org/wikipedia/commons/5/54/Coat_of_arms_of_Retiro.svg"),
+  ("bandera.svg",    "https://upload.wikimedia.org/wikipedia/commons/b/b0/Flag_of_El_Retiro_%28Antioquia%29.svg"),
+  ("mapa.png",       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Colombia_-_Antioquia_-_El_Retiro.svg/800px-Colombia_-_Antioquia_-_El_Retiro.svg.png"),
+  ("represa.jpg",    "https://upload.wikimedia.org/wikipedia/commons/4/4a/Embalse_La_Fe.jpg"),
+  ("salto.jpg",      "https://upload.wikimedia.org/wikipedia/commons/8/8b/Salto_del_Tequendamita.jpg"),
+  ("aguacate.jpg",   "https://upload.wikimedia.org/wikipedia/commons/e/e1/Haas_avocado.jpg"),
+  ("bosque.jpg",     "https://upload.wikimedia.org/wikipedia/commons/9/9b/Bosque_andino_Colombia.jpg"),
+  ("muebles.jpg",    "https://upload.wikimedia.org/wikipedia/commons/0/07/Carpintero_Colombia.jpg"),
+  ("javiera.jpg",    "https://upload.wikimedia.org/wikipedia/commons/3/36/Museo_El_Retiro_Antioquia.jpg"),
+  ("fiestas.jpg",    "https://upload.wikimedia.org/wikipedia/commons/f/f8/Fiestas_Colombia_noche.jpg"),
+  ("banda.jpg",      "https://upload.wikimedia.org/wikipedia/commons/0/05/Banda_Municipal_Colombia.jpg"),
+]
 
-          ok = 0
-          for nombre, urls in fotos:
-            print(f"\nDescargando {nombre}...")
-            descargado = False
-            for url in urls:
-              try:
-                req = urllib.request.Request(url, headers={"User-Agent":UA,"Referer":REF})
-                with urllib.request.urlopen(req, timeout=30) as r:
-                  data = r.read()
-                if len(data) > 5000:
-                  with open(f"imgs/{nombre}", "wb") as f:
-                    f.write(data)
-                  print(f"  OK: {nombre} ({len(data):,} bytes)")
-                  ok += 1
-                  descargado = True
-                  break
-                else:
-                  print(f"  Muy pequeno ({len(data)} bytes): {url[:60]}")
-              except Exception as e:
-                print(f"  Error: {str(e)[:80]}")
-              time.sleep(0.5)
-            if not descargado:
-              print(f"  FALLO: {nombre} - ninguna URL funciono")
+ok = 0
+for nombre, url in fotos:
+  print(f"Descargando {nombre}...")
+  try:
+    req = urllib.request.Request(url, headers={"User-Agent":UA, "Referer":REF})
+    with urllib.request.urlopen(req, timeout=30) as r:
+      data = r.read()
+    if len(data) > 5000:
+      with open(f"imgs/{nombre}", "wb") as f:
+        f.write(data)
+      print(f"  OK: {len(data):,} bytes")
+      ok += 1
+    else:
+      print(f"  FALLO: solo {len(data)} bytes")
+  except Exception as e:
+    print(f"  ERROR: {e}")
+  time.sleep(1)
 
-          print(f"\n=== {ok}/{len(fotos)} fotos descargadas ===")
-          import subprocess
-          subprocess.run(["ls", "-lh", "imgs/"])
-          PYEOF
+print(f"\nResultado: {ok}/{len(fotos)} descargadas")
+import subprocess
+result = subprocess.run(["ls","-lh","imgs/"], capture_output=True, text=True)
+print(result.stdout)
+PYEOF
 
-      - name: Commit y push
+      - name: Verificar y subir fotos
         run: |
+          echo "=== Archivos en imgs/ ==="
+          ls -lh imgs/ || echo "Carpeta vacia"
+          echo ""
+          echo "=== Git status ==="
+          git status
+          git add --force imgs/
+          git status
+          echo ""
+          echo "=== Haciendo commit ==="
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add imgs/
           if git diff --staged --quiet; then
-            echo "Sin cambios"
+            echo "Sin archivos para commitear - las fotos no se descargaron"
           else
             git commit -m "Fotos reales El Retiro - Wikimedia CC-BY-SA"
             git push
-            echo "Push exitoso"
+            echo "Push exitoso - fotos subidas al repo"
           fi
